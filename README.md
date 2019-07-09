@@ -1,3 +1,63 @@
+# Link to Published Website:
+# Link to Github Repo: 
+  https://github.com/michaeltwitt/MERN
+
+# Problem definition / purpose:
+Design, build, deploy and present a web application (App) built for a real world customer.
+
+# Functionality / features:
+
+# Screenshots:
+
+# Tech stack (e.g. html, css, deployment platform, etc):
+Mongo / Mongoose
+Express
+React.js
+Node.js
+
+# Instructions on how to setup, configure, deploy and use your :
+
+# Design process:
+
+# User stories:
+
+# A workflow diagram of the user journey/s.:
+
+# Wireframes:
+
+# Database Entity Relationship Diagrams:
+
+# Data Flow Diagram:
+
+# OO design documentation:
+
+# Project plan & timeline:
+
+# Client communications:
+
+# Screenshots of Trello board(s):
+https://trello.com/b/00yyNtI7/mern-project
+
+# Short Answers:
+What are the most important aspects of quality software?
+What libraries are being used in the app and why?
+A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
+Within your own project what knowledge or skills were required to complete your project, and overcome challenges?
+Evaluate how effective your knowledge and skills were this project, using examples, and suggest changes or improvements for future projects of a similar nature?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
