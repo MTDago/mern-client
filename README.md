@@ -1,9 +1,15 @@
 # Link to Published Website:
-# Link to Github Repo: 
+# Link to Github Repo:
+  ## Client-side
   https://github.com/michaeltwitt/MERN
+  ## Server-side
+  https://github.com/michaeltwitt/mern-server
 
 # Problem definition / purpose:
 Design, build, deploy and present a web application (App) built for a real world customer.
+
+
+Creating a website for an author: where they can sell books, post updates/blog posts as well as contact information and the ability to do a join an emailing list. This website will function essentially as a portfolio/blog/one-sided marketplace, and will be made using the MERN stack.  
 
 # Functionality / features:
 
@@ -20,6 +26,23 @@ Node.js
 # Design process:
 
 # User stories:
+
+US 1: As a user I can buy books
+
+US 2: As a user I can search for books
+
+US 3: As a user I can write a review
+
+US 4: As a user I can read about author
+
+US 5: As a user I can ship books
+
+US 6: As the client  I can create a book 
+
+US 7: As the client  I can upload images
+
+US 8: As the client  I can write a blog
+
 
 # A workflow diagram of the user journey/s.:
 
