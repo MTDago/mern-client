@@ -1,21 +1,27 @@
 # Link to Published Website:
+
 # Link to Github Repo:
-  ## Client-side
-  https://github.com/michaeltwitt/MERN
-  ## Server-side
-  https://github.com/michaeltwitt/mern-server
+
+## Client-side
+
+https://github.com/michaeltwitt/MERN
+
+## Server-side
+
+https://github.com/michaeltwitt/mern-server
 
 # Problem definition / purpose:
+
 Design, build, deploy and present a web application (App) built for a real world customer.
 
-
-Creating a website for an author: where they can sell books, post updates/blog posts as well as contact information and the ability to do a join an emailing list. This website will function essentially as a portfolio/blog/one-sided marketplace, and will be made using the MERN stack.  
+Creating a website for an author: where they can sell books, post updates/blog posts as well as contact information and the ability to do a join an emailing list. This website will function essentially as a portfolio/blog/one-sided marketplace, and will be made using the MERN stack.
 
 # Functionality / features:
 
 # Screenshots:
 
 # Tech stack (e.g. html, css, deployment platform, etc):
+
 Mongo / Mongoose
 Express
 React.js
@@ -37,12 +43,11 @@ US 4: As a user I can read about author
 
 US 5: As a user I can ship books
 
-US 6: As the client  I can create a book 
+US 6: As the client I can create a book
 
-US 7: As the client  I can upload images
+US 7: As the client I can upload images
 
-US 8: As the client  I can write a blog
-
+US 8: As the client I can write a blog
 
 # A workflow diagram of the user journey/s.:
 
@@ -59,27 +64,16 @@ US 8: As the client  I can write a blog
 # Client communications:
 
 # Screenshots of Trello board(s):
+
 https://trello.com/b/00yyNtI7/mern-project
 
 # Short Answers:
+
 What are the most important aspects of quality software?
 What libraries are being used in the app and why?
 A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
 Within your own project what knowledge or skills were required to complete your project, and overcome challenges?
 Evaluate how effective your knowledge and skills were this project, using examples, and suggest changes or improvements for future projects of a similar nature?
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
