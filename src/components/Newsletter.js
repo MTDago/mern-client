@@ -2,24 +2,47 @@ import React, { Component } from 'react'
 import Title from './Title'
 
 export default class Newsletter extends Component {
-   
-    render() {
+    constructor(props) {
+        super(props);
+        this.state = {
+          name: "",
+          email: ""
+        };
+      }
+    
+      render() {
+        const { name, email } = this.state;
         return (
-            <section className="blogs">
-                <Title title="Newsletter" />
-                <form>
-                    <h3>Enter your details below</h3>
-                    <label>
-                        Name:
-                        <input type="text" name="name" />
-                    </label>
-                    <label>
-                        Email:
-                        <input type="text" name="email"/>
-                    </label>
-                    <input type="submit" value="Submit" />
-                </form>                                         
-            </section>            
-        )
+          <form onSubmit={this.handleSubmit}>
+            <label htmlFor="name">Name</label>
+            <input
+              name="name"
+              type="text"
+              placeholder="Enter your name"
+              value={name}
+              onChange={this.handleChange}
+            />
+            <label htmlFor="name">Email</label>
+            <input
+              name="email"
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={this.handleChange}
+            />
+            <button type="submit">Submit</button>
+          </form>
+        );
+      }
+    
+      handleChange = event => {
+        this.setState({
+          [event.target.name]: event.target.value
+        });
+      };
+    
+      handleSubmit = event => {
+        console.log("Submitting");
+        console.log(this.state);
+      };
     }
-}
