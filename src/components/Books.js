@@ -1,23 +1,26 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Title from './Title'
 
-export default class Books extends Component {
-    state = {
-        blogs: []
-    }
-    render() {
-        return (
-            <section className="blogs">
-                <Title title="My Books" />
-                <div className='blogs-center'>
-                    {this.state.blogs.map((item, index) => {
-                        return <article key={index} className='blog'>
-                            
-                        </article>
+export default function BookList({ books }) {
+    const Book = () => {}
+    // if (books.length === 0) {
+    //     return (
+    //         <div className='empty-search'>
+    //             <h3>Unfortunately nothing matched your search</h3>
+    //         </div>
+    //     )
+    // }
+    return (
+        <section className="blogs">
+            <Title title="My Books" />
+            {/* <section className='bookslist'>
+                <div className='bookslist-center'>
+                    {books.map(item => {
+                        return <Book key={item.id} book={item} />
                     })}
-                </div>                
-            </section>
-        )
-    }
+                </div>
+            </section> */}
+        </section>
+    )
 }
 
