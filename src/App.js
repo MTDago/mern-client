@@ -9,6 +9,7 @@ import Blog from './components/Blog'
 import Newsletter from './components/Newsletter'
 // import LoginForm from './components/LoginForm';
 import ValidatedLoginForm from './components/ValidateLoginForm';
+import SingleBook from './components/SingleBook';
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
             <Route exact path="/newsletter" component={Newsletter}/>
             {/* <Route exact path ="/login" component={LoginForm} /> */}
             <Route exact path="/login" component={ValidatedLoginForm}/>
+            <Route exact path="/books/:slug" component={SingleBook}/>
         </>
     );
 }
