@@ -7,15 +7,19 @@ import AboutMe from './components/AboutMe';
 import Books from './components/Books'
 import Blog from './components/Blog'
 import Newsletter from './components/Newsletter'
+// import LoginForm from './components/LoginForm';
+import ValidatedLoginForm from './components/ValidateLoginForm';
 
 function App() {
     return (
         <>
-        <Navbar />
-        <Route exact path="/aboutMe" component={AboutMe}/>
-        <Route exact path="/books/" component={Books}/>
-        <Route exact path="/blog" component={Blog}/>
-        <Route exact path="/newsletter" component={Newsletter}/>
+            <Navbar />
+            <Route exact path="/aboutMe" component={AboutMe}/>
+            <Route exact path="/books/" component={Books}/>
+            <Route exact path="/blog" component={Blog}/>
+            <Route exact path="/newsletter" component={Newsletter}/>
+            {/* <Route exact path ="/login" component={LoginForm} /> */}
+            <Route exact path="/login" component={ValidatedLoginForm}/>
         </>
     );
 }
