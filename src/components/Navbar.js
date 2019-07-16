@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import '../App.css';
 
 export default class Navbar extends Component {
     state = {
@@ -15,7 +16,7 @@ export default class Navbar extends Component {
             <div className="nav-center">
                 <div className="nav-header">
                     <Link to="/">
-                        <h2>Jo Brimblecombe</h2>   
+                        <h2 className='Title'>Jo Brimblecombe</h2>   
                     </Link>
                     {/* <button type="button" className="nav-btn" onClick={this.handleToggle}> */}
                         {/* <FaAlignRight className="nav-icon"/> */}

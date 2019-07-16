@@ -1,6 +1,5 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
 import Navbar from './components/Navbar';
 import { Route, Switch } from 'react-router-dom'
 import AboutMe from './components/AboutMe';
@@ -10,6 +9,7 @@ import Newsletter from './components/Newsletter'
 // import LoginForm from './components/LoginForm';
 import ValidatedLoginForm from './components/ValidateLoginForm';
 import SingleBook from './components/SingleBook';
+import './App.css';
 
 function App() {
     return (
