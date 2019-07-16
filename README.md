@@ -51,6 +51,9 @@ US 8: As the client I can write a blog
 
 # A workflow diagram of the user journey/s.:
 
+![User Journey](https://user-images.githubusercontent.com/47685649/61335772-0aa78680-a872-11e9-9b35-e3089779fe44.png)
+
+
 # Wireframes:
 
 # Database Entity Relationship Diagrams:
