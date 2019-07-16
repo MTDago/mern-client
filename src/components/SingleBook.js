@@ -18,10 +18,10 @@ export default class SingleBook extends Component {
         }
         const {
             title,
-            description,
-            price,
-            images,
-            datePublished
+            cost,
+            blurb,
+            published,
+            images
         } = book
         return (
             <div>
@@ -34,12 +34,12 @@ export default class SingleBook extends Component {
                     <div className='single-book-info'>
                         <article className='description'>
                             <h1>{title}</h1>
-                            <p>{description}</p>
+                            <p>{blurb}</p>
                         </article>
                         <article className='info'>
                             <h3>Info</h3>
-                            <h6>Price : ${price}</h6>
-                            <h6>Date Published : ${datePublished}</h6>                                                       
+                            <h6>Price : ${cost}</h6>
+                            <h6>Date Published : ${published}</h6>                                                       
                         </article>
                     </div>
                 </section>

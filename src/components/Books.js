@@ -1,8 +1,38 @@
-import React from 'react'
+import React, {Component} from 'react'
 import Title from './Title'
+import axios from 'axios'
+const bookAPI = "https://mern-server-deployment.herokuapp.com/books"
 
-export default function BookList({ books }) {
-    const Book = () => {}
+export default class Book extends Component {
+    state ={
+        books: []
+    }
+    
+    componentDidMount = () => {
+        axios.get(bookAPI).then(result => {
+            this.setState({
+                books: [...result.data]
+            })
+        })
+    }
+    render() {
+        return (
+            <section className="books">
+                <Title title="My Books" />
+                <div className='books-center'> 
+                    {this.state.books.map(object => {
+                        return <div>
+                        <h2>{object.title}</h2>
+                        <p>{object.blurb}</p>
+                        </div>
+                    })}
+                </div>
+            </section>
+        )
+    }
+}
+
+    // const Book = () => {}
     // if (books.length === 0) {
     //     return (
     //         <div className='empty-search'>
@@ -10,9 +40,9 @@ export default function BookList({ books }) {
     //         </div>
     //     )
     // }
-    return (
-        <section className="blogs">
-            <Title title="My Books" />
+
+        // <section className="blogs">
+            // <Title title="My Books" />
             {/* <section className='bookslist'>
                 <div className='bookslist-center'>
                     {books.map(item => {
@@ -20,7 +50,3 @@ export default function BookList({ books }) {
                     })}
                 </div>
             </section> */}
-        </section>
-    )
-}
-
