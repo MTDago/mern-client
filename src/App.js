@@ -1,10 +1,9 @@
 import React from 'react';
-import './App.css';
 import Navbar from './components/Navbar';
 import { Route, Switch } from 'react-router-dom'
-import AboutMe from './components/AboutMe';
-import Books from './components/Books'
-import Blog from './components/Blog'
+import AboutMe from './pages/AboutMe';
+import Books from './pages/Books'
+import Blog from './pages/Blog'
 import Newsletter from './components/Newsletter'
 // import LoginForm from './components/LoginForm';
 import ValidatedLoginForm from './components/ValidateLoginForm';

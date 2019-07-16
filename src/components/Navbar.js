@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import '../App.css';
+import '../App.sass';
 
 export default class Navbar extends Component {
     state = {
@@ -12,31 +12,26 @@ export default class Navbar extends Component {
     }
     
     render() {
-        return <nav className="navbar">
-            <div className="nav-center">
-                <div className="nav-header">
+        return <div className="navbar-menu">
+                <div>
                     <Link to="/">
-                        <h2 className='Title'>Jo Brimblecombe</h2>   
+                        <h2 className='navbar-item navbar-brand'>Jo Brimblecombe</h2>   
                     </Link>
-                    {/* <button type="button" className="nav-btn" onClick={this.handleToggle}> */}
-                        {/* <FaAlignRight className="nav-icon"/> */}
-                    {/* </button> */}
                 </div>
-                <ul className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}>
-                    <li>    
-                        <Link to="/aboutMe">About Me</Link>
-                    </li>
-                    <li>
-                        <Link to="/books">Books</Link>
-                    </li>
-                    <li>
-                        <Link to="/blog">Blog</Link>
-                    </li>
-                    <li>
-                        <Link to="/newsletter">Newsletter</Link>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+                <>
+                    <a>    
+                        <Link className='navbar-end navbar-item' to="/aboutMe">About Me</Link>
+                    </a>
+                    <a>
+                        <Link className='navbar-end navbar-item' to="/books">Books</Link>
+                    </a>
+                    <a>
+                        <Link className='navbar-end navbar-item' to="/blog">Blog</Link>
+                    </a>
+                    <a>
+                        <Link className='navbar-end navbar-item' to="/newsletter">Newsletter</Link>
+                    </a>
+                </>
+        </div>
     }
 }
