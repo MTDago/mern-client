@@ -1,9 +1,5 @@
 import React from 'react';
-<<<<<<< HEAD
 import './App.css';
-=======
-import logo from './logo.svg';
->>>>>>> e393fd48ba51f33d7af187e8a5154deab28bf840
 import Navbar from './components/Navbar';
 import { Route, Switch } from 'react-router-dom'
 import AboutMe from './components/AboutMe';
