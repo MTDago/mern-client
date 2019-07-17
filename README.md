@@ -58,6 +58,8 @@ Deploy:
 
 # Design process:
 
+Our design process started when looking over a smaller project Michael had done which we then used as a guide for the wireframes. We also browsed other authors webpages for ideas. Once we had a basic understanding of what we thought the app could look like, we discussed with the client and showed them our ideas. After the initial interview we had a solid direction and we started creating the ERD and basic skeletons of the application.
+
 # User stories:
 
 US 1: As a user I can buy books
