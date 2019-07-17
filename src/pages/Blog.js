@@ -19,17 +19,17 @@ export default class Blog extends Component {
 
     render() {
         return (
-            <section className="columns">
+            <section className="column is-mobile is-centered">
                 <Title title="My Blog" />
-                <div className='blogs-center'>
+                <div>
                     {this.state.blogs.map(object => {
-                        return <article key={object._id} className='tile box'>
+                        return <div key={object._id} className='tile is-parent box'>
                             <h2 className='heading'>{object.title}</h2>
-                            <section className='section gap-4'>{object.content}</section>
+                            <article className='section'>{object.content}</article>
                             {object.tags.map(tag => {
-                                return <p className=''><br/>{tag}</p>
+                                return <p className='level-item has-text-centered is-hidden'>{tag}</p>
                             })}
-                        </article>
+                        </div>
                     })}
                 </div>                
             </section>
