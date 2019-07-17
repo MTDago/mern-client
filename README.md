@@ -102,6 +102,7 @@ US 8: As the client I can write a blog
 ![mobile_landing_page](https://user-images.githubusercontent.com/47685649/61348568-7f93b400-a8a4-11e9-9f31-301fd1e93818.png)
 ![mobile_blogpage](https://user-images.githubusercontent.com/47685649/61348574-828ea480-a8a4-11e9-9c35-30d4fb4a0207.png)
 # Database Entity Relationship Diagrams:
+![erd mern](https://user-images.githubusercontent.com/47685649/61350646-a1dd0000-a8ab-11e9-8bf1-03f3dd06dcf6.png)
 
 # Data Flow Diagram:
 
