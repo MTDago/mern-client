@@ -19,12 +19,12 @@ export default class NewBook extends Component {
         event.preventDefault()
         const { title, content} = this.state;
         const tags = this.tagArray
-        // axios.post(blogAPI, {
-        //     title: title,
-        //     content: content,
-        //     tags: tags,
-        //     date: Date.now
-        // });
+        axios.post(blogAPI, {
+            title: title,
+            content: content,
+            tags: tags,
+            date: Date.now
+        });
         console.log('Something happened')
     };
 

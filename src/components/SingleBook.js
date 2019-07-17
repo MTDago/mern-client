@@ -15,7 +15,7 @@ export default class SingleBook extends Component {
     
 
     componentDidMount = () => {
-        axios.get()
+        axios.get(this.singleBookAPI)
     }
 
     render() {
