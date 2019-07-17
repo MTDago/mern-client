@@ -3,6 +3,7 @@ import Title from '../components/Title';
 import '../App.sass';
 import { blogAPI } from '../API/init';
 import axios from 'axios';
+import {Redirect} from 'react-router-dom'
 
 export default class NewBook extends Component {
    constructor(props) {
@@ -10,29 +11,47 @@ export default class NewBook extends Component {
         this.state = {
             title: '',
             content: '',
-            tags: ''
+            tags: '',
+            tagArray: []
         };
-        let tagArray = []
     }
+
+
 
     handleSubmit = event => {
         event.preventDefault()
-        const { title, content} = this.state;
+        const { title, content } = this.state;
         const tags = this.tagArray
         axios.post(blogAPI, {
             title: title,
             content: content,
             tags: tags,
             date: Date.now
-        });
+        }).then(
+            <Redirect to="/aboutMe" />
+        )
         console.log('Something happened')
     };
 
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
-        });
-    };
+        })
+    }
+
+    handleTags = event => {
+        event.preventDefault()
+        let newTag = document.getElementById("tags").value
+
+
+        this.setState({
+            tagArray: [...this.state.tagArray, newTag]
+        })
+
+
+        console.log(newTag)
+        console.log(this.state.tagArray)
+    }
 
     render() {
         const {title, content, tags} = this.state
@@ -81,8 +100,8 @@ export default class NewBook extends Component {
                         <br/><br/><br/>
 
                         {/* Tags */}
-                        <form action="">
-                            <p>{this.tagArray}</p>
+                            {this.state.tagArray.map(tag => 
+                            <p key={this.state.tagArray.indexOf(tag)}>{tag}</p>)}
                             
                             <label
                                 className="label has-text-centered is-uppercase"
@@ -95,9 +114,11 @@ export default class NewBook extends Component {
                                 type="text"
                                 name="tags"
                                 placeholder="Enter a tag"
-                                value={tags}
+                                id="tags"
                             />
-                        </form>
+                            <button className="button is-rounded" type="button" id="tagbutton" onClick={this.handleTags}>
+                            Add Tag
+                            </button>
 
                         <br/><br/><br/>
                     
