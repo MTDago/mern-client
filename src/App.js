@@ -11,7 +11,7 @@ import SingleBook from './components/SingleBook';
 import './App.sass';
 import NewBook from './components/NewBook'
 import NewBlog from './components/NewBlog'
-import CheckoutForm from './components/CheckoutForm'
+import CheckoutForm from './pages/CheckoutForm'
 
 function App() {
     return (
