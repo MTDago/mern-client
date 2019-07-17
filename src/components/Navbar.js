@@ -12,7 +12,7 @@ export default class Navbar extends Component {
     }
     
     render() {
-        return <nav className="navbar-menu is-mobile">
+        return <nav className="container is-fluid navbar-menu is-active is-dark">
                 <div className='navbar-brand navbar-item'>
                     <Link to="/aboutMe">
                         <h2 className='navbar-item'>Jo Brimblecombe</h2>   

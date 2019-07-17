@@ -19,7 +19,7 @@ export default class Book extends Component {
     }
     render() {
         return (
-            <section className="column is-mobile is-centered is-half">
+            <section className="container is-fluid column is-mobile is-centered is-half">
                 <Title title="My Books" />
                 <div className='tile is-vertical is-8 is-parent'> 
                     {this.state.books.map(object => {

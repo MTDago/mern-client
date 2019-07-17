@@ -41,7 +41,7 @@ export default class NewBook extends Component {
                     className="columns is-mobile is-centered"
                     onSubmit={this.handleSubmit}
                 >
-                    <div className="colum is-half is-narrow">
+                    <div className="column is-half is-narrow">
                         {/* TITLE */}
                         <label
                             className="label has-text-centered is-uppercase"
