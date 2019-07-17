@@ -13,7 +13,18 @@ export default class NewBook extends Component {
         series: ''
     };
 
-    handleSubmit = event => {};
+    handleSubmit = event => {
+        event.preventDefault()
+        const { title, cost, blurb, published, series } = this.state;
+        axios.post(bookAPI, {
+            title: title,
+            cost: cost,
+            blurb: blurb,
+            published: published,
+            series: series
+        });
+        console.log('SOmethign happened')
+    };
 
     handleChange = event => {
         this.setState({
@@ -112,6 +123,12 @@ export default class NewBook extends Component {
                             name="series"
                             value={series}
                             onChange={this.handleChange} />
+                        
+                        <br/><br/>
+                        
+                        <button className="button is-rounded" type="submit">
+                            Submit
+                        </button>
                     </div>
                 </form>
             </div>
