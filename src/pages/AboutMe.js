@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Title from './Title'
+import Title from '../components/Title'
 import '../App.css'
 
 export default class AboutMe extends Component {
