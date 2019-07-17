@@ -9,6 +9,7 @@ import Newsletter from './pages/Newsletter';
 import ValidatedLoginForm from './pages/ValidateLoginForm';
 import SingleBook from './components/SingleBook';
 import './App.sass';
+import NewBook from './components/NewBook'
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
             {/* <Route exact path ="/login" component={LoginForm} /> */}
             <Route exact path="/login" component={ValidatedLoginForm} />
             <Route path="/books/:id" component={SingleBook} />
+            <Route path="/books/add" component={NewBook} />
         </>
     );
 }

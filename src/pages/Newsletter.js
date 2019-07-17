@@ -14,6 +14,22 @@ export default class Newsletter extends Component {
         };
     }
 
+    handleChange = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    };
+
+    handleSubmit = event => {
+        event.preventDefault();
+        const { firstName, lastName, email } = this.state;
+        axios.post(mailingListAPI, {
+            firstName: firstName,
+            lastName: lastName,
+            email: email
+        });
+    };
+
     render() {
         const { firstName, lastName, email } = this.state;
         return (
@@ -88,20 +104,4 @@ export default class Newsletter extends Component {
             </div>
         );
     }
-
-    handleChange = event => {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    };
-
-    handleSubmit = event => {
-        event.preventDefault();
-        const { firstName, lastName, email } = this.state;
-        axios.post(mailingListAPI, {
-            firstName: firstName,
-            lastName: lastName,
-            email: email
-        });
-    };
 }
