@@ -4,7 +4,7 @@
 
 ## Client-side
 
-https://github.com/michaeltwitt/MERN
+https://github.com/michaeltwitt/mern-client
 
 ## Server-side
 
@@ -55,7 +55,15 @@ US 8: As the client I can write a blog
 
 
 # Wireframes:
-
+![web_single_book](https://user-images.githubusercontent.com/47685649/61348530-625ee580-a8a4-11e9-99cf-6c58cdfa1c5c.png)
+![web_mailing_list](https://user-images.githubusercontent.com/47685649/61348537-65f26c80-a8a4-11e9-8099-7d4fcfba6fc9.png)
+![web_landing_page](https://user-images.githubusercontent.com/47685649/61348551-6f7bd480-a8a4-11e9-8295-1fe10a5350c5.png)
+![web_books_menu](https://user-images.githubusercontent.com/47685649/61348554-730f5b80-a8a4-11e9-991f-5e372788ff94.png)
+![web_blogpage](https://user-images.githubusercontent.com/47685649/61348559-773b7900-a8a4-11e9-8c5e-065666776ef1.png)
+![mobile_mailing_list](https://user-images.githubusercontent.com/47685649/61348564-799dd300-a8a4-11e9-9379-6210856f8940.png)
+![mobile_single_book](https://user-images.githubusercontent.com/47685649/61348567-7c98c380-a8a4-11e9-9a19-0f74f3fc33a5.png)
+![mobile_landing_page](https://user-images.githubusercontent.com/47685649/61348568-7f93b400-a8a4-11e9-9f31-301fd1e93818.png)
+![mobile_blogpage](https://user-images.githubusercontent.com/47685649/61348574-828ea480-a8a4-11e9-9c35-30d4fb4a0207.png)
 # Database Entity Relationship Diagrams:
 
 # Data Flow Diagram:
