@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Title from './Title'
+import Title from '../components/Title'
 import axios from 'axios'
 
 const blogAPI = "https://mern-server-deployment.herokuapp.com/blogs"
