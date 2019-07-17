@@ -20,7 +20,7 @@ function App() {
             <Route exact path="/newsletter" component={Newsletter}/>
             {/* <Route exact path ="/login" component={LoginForm} /> */}
             <Route exact path="/login" component={ValidatedLoginForm}/>
-            <Route exact path="/books/:slug" component={SingleBook}/>
+            <Route path="/:id" component={SingleBook}/>
         </>
     );
 }
