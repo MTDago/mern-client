@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Title from './Title'
+import Title from '../components/Title'
 
 export default class Newsletter extends Component {
     constructor(props) {
