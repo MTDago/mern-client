@@ -16,7 +16,7 @@ export default class Newsletter extends Component {
         return (
             <section className="card">
                 <Title title="Newsletter" />
-                <form onSubmit={this.handleSubmit}>
+                <form className='column is-3' onSubmit={this.handleSubmit}>
                     <label htmlFor="name">Name</label>
                     <input
                       name="name"
