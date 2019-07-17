@@ -109,6 +109,7 @@ US 8: As the client I can write a blog
 # OO design documentation:
 
 # Project plan & timeline:
+![timeline](https://user-images.githubusercontent.com/47685649/61351984-8f64c580-a8af-11e9-9332-8ceb6c8b182a.PNG)
 
 # Client communications:
 
