@@ -1,10 +1,10 @@
 import React from 'react'
+import '../App.sass'
 
 export default function Title({title}) {
     return (
-        <div className='section-title'>
-            <h4>{title}</h4>
-            <div></div>
+        <div className='column is-two-quarter'>
+            <h4 className='title is-3 has-text-left is-lowercase'>{title}</h4>
         </div>
     )
 }
