@@ -19,7 +19,7 @@ export default class Blog extends Component {
 
     render() {
         return (
-            <section className="column is-mobile is-centered">
+            <section className="container is-fluid column is-mobile is-centered">
                 <Title title="My Blog" />
                 <div>
                     {this.state.blogs.map(object => {
