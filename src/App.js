@@ -8,7 +8,7 @@ import Newsletter from './components/Newsletter'
 // import LoginForm from './components/LoginForm';
 import ValidatedLoginForm from './components/ValidateLoginForm';
 import SingleBook from './components/SingleBook';
-import './App.css';
+import './App.sass';
 
 function App() {
     return (
