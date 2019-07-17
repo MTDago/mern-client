@@ -20,14 +20,14 @@ Creating a website for an author: where they can sell books, post updates/blog p
 
 The main functions of the application are as follows;
 
-*A ‘main page’ where users can read a short blurb about the author, see latest blog posts and books
-*An ‘about me’ page where users can read more in depth about the author
-*A ‘books’ page that displays all the authors books
-*A ‘blog’ page that displays all the authors blogs
-*A ‘newsletter’ page where users can sign up to receive content from the author, directly to their emails
-*A page off the ‘books’ page where users can read about the book and have the option to purchase the book.
-*An order page where users finalise their purchase
-*Admin will also have a secret login page so that they have the ability to add, edit and destroy books and blogs.
+* A ‘main page’ where users can read a short blurb about the author, see latest blog posts and books
+* An ‘about me’ page where users can read more in depth about the author
+* A ‘books’ page that displays all the authors books
+* A ‘blog’ page that displays all the authors blogs
+* A ‘newsletter’ page where users can sign up to receive content from the author, directly to their emails
+* A page off the ‘books’ page where users can read about the book and have the option to purchase the book.
+* An order page where users finalise their purchase
+* Admin will also have a secret login page so that they have the ability to add, edit and destroy books and blogs.
 
 # Screenshots:
 
