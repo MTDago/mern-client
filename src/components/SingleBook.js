@@ -1,13 +1,33 @@
 import React, { Component } from 'react'
+import axios from 'axios'
+import {bookAPI} from '../API/init'
+
 
 export default class SingleBook extends Component {
+    
     constructor(props) {
         super(props)
         this.state = {
-            slug: this.props.match.params.slug,
-            // defaultBcg
+            id: this.props.match.params.id,
         }
     }
+
+    componentDidMount = () => {
+        axios.get(bookAPI, {
+        params: {
+            id: this.state.id
+        }
+        }).then(function (response) {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });        
+    }
+
+
+
+
     render() {
         const { getBook } = this.context 
         const book = getBook(this.state.slug)
@@ -23,6 +43,7 @@ export default class SingleBook extends Component {
             published,
             images
         } = book
+
         return (
             <div>
                  <section className='single-book'>

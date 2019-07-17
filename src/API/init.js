@@ -1,12 +1,10 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL:
-  "http://localhost:5000",
-    // process.env.NODE_ENV === "production" ? "https://mern-server-deployment.herokuapp.com/" : "http://localhost:5000",
-  headers: { "Content-Type": "application/json" },
-  proxy: false
-});
+const blogAPI = "https://mern-server-deployment.herokuapp.com/blogs"
+
+const mailingListAPI = "https://mern-server-deployment.herokuapp.com/mailinglist"
 
 
-export default { api };
+const bookAPI = "https://mern-server-deployment.herokuapp.com/books"
+
+export  {blogAPI, mailingListAPI, bookAPI}

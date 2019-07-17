@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import Title from '../components/Title'
 import axios from 'axios'
 import '../App.sass'
-const bookAPI = "https://mern-server-deployment.herokuapp.com/books"
+import {bookAPI} from '../API/init'
+
 
 export default class Book extends Component {
     state ={
@@ -33,21 +34,4 @@ export default class Book extends Component {
     }
 }
 
-    // const Book = () => {}
-    // if (books.length === 0) {
-    //     return (
-    //         <div className='empty-search'>
-    //             <h3>Unfortunately nothing matched your search</h3>
-    //         </div>
-    //     )
-    // }
 
-        // <section className="blogs">
-            // <Title title="My Books" />
-            {/* <section className='bookslist'>
-                <div className='bookslist-center'>
-                    {books.map(item => {
-                        return <Book key={item.id} book={item} />
-                    })}
-                </div>
-            </section> */}

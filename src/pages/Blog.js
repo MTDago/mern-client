@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Title from '../components/Title'
 import axios from 'axios'
-
-const blogAPI = "https://mern-server-deployment.herokuapp.com/blogs"
+import {blogAPI} from '../API/init'
 
 export default class Blog extends Component {
     state = {
