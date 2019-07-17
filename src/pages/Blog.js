@@ -19,15 +19,15 @@ export default class Blog extends Component {
 
     render() {
         return (
-            <section className="blogs">
+            <section className="columns">
                 <Title title="My Blog" />
                 <div className='blogs-center'>
                     {this.state.blogs.map(object => {
-                        return <article key={object._id} className='blog'>
-                            <h2>{object.title}</h2>
-                            <p>{object.content}</p>
+                        return <article key={object._id} className='tile box'>
+                            <h2 className='heading'>{object.title}</h2>
+                            <section className='section gap-4'>{object.content}</section>
                             {object.tags.map(tag => {
-                                return <p>{tag}</p>
+                                return <p className=''><br/>{tag}</p>
                             })}
                         </article>
                     })}
