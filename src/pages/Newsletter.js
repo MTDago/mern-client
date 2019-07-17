@@ -14,28 +14,41 @@ export default class Newsletter extends Component {
       render() {
         const { name, email } = this.state;
         return (
-            <section className="card">
+            <div>
                 <Title title="Newsletter" />
-                <form className='column is-3' onSubmit={this.handleSubmit}>
-                    <label htmlFor="name">Name</label>
-                    <input
+            <form className='columns is-mobile is-centered' onSubmit={this.handleSubmit}>
+              <div className='column is-half is-narrow'>
+              <br/>
+              <br/>
+              <br/>
+                    <label className='label has-text-centered is-uppercase' htmlFor="name">Name</label>
+                <input
+                  className='input is-rounded'
                       name="name"
                       type="text"
                       placeholder="Enter your name"
                       value={name}
                       onChange={this.handleChange}
-                    />
-                    <label htmlFor="name">Email</label>
-                    <input
+                />
+                <br/>
+                <br/>
+                <br/>                
+                    <label className='label has-text-centered is-uppercase' htmlFor="name">Email</label>
+                <input
+                  className='input is-rounded'
                       name="email"
                       type="email"
                       placeholder="Enter your email"
                       value={email}
-                      onChange={this.handleChange}
-                    />
-                    <button type="submit">Submit</button>
+                    onChange={this.handleChange}
+                />
+                <br/>
+                <br/>
+
+                <button className='button is-rounded' type="submit">Submit</button>
+                </div>
                 </form>
-          </section>
+          </div>
         );
       }
     
