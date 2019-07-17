@@ -1,5 +1,5 @@
 import React from "react";
-import Title from './Title'
+import Title from '../components/Title'
 
 export default class LoginForm extends React.Component {
     constructor(props) {
