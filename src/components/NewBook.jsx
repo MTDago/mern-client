@@ -84,8 +84,8 @@ export default class NewBook extends Component {
                         >
                             Description
                         </label>
-                        <input
-                            className="input is-rounded"
+                        <textarea
+                            className="textarea"
                             type="text"
                             name="blurb"
                             placeholder="Enter the blurb"

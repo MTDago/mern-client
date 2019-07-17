@@ -10,6 +10,7 @@ import ValidatedLoginForm from './pages/ValidateLoginForm';
 import SingleBook from './components/SingleBook';
 import './App.sass';
 import NewBook from './components/NewBook'
+import NewBlog from './components/NewBlog'
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
             <Route exact path="/login" component={ValidatedLoginForm} />
             <Route path="/books/:id" component={SingleBook} />
             <Route path="/books/add" component={NewBook} />
+            <Route path="/blogs/add" component={NewBlog} />            
         </>
     );
 }
