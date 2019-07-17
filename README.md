@@ -33,10 +33,18 @@ The main functions of the application are as follows;
 
 # Tech stack (e.g. html, css, deployment platform, etc):
 
-Mongo / Mongoose
-Express
-React.js
-Node.js
+Front-End:
+* React
+* HTML
+* CSS
+
+Back-End:
+* Express
+* Node
+* Mongoose
+
+Database:
+* MongoDb
 
 # Instructions on how to setup, configure, deploy and use your :
 
