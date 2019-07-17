@@ -40,6 +40,22 @@ Node.js
 
 # Instructions on how to setup, configure, deploy and use your :
 
+Client-side: 
+* from command line -  git clone https://github.com/michaeltwitt/mern-client.git
+* Cd into repo
+* Npm/yarn install
+* npm/yarn start
+
+Server-side: 
+* from command line - git clone https://github.com/michaeltwitt/mern-server.git
+* Cd into repo
+* npm/yarn install
+* Nodemon
+
+Deploy: 
+* from command line - git push heroku master
+
+
 # Design process:
 
 # User stories:
