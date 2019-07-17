@@ -12,26 +12,26 @@ export default class Navbar extends Component {
     }
     
     render() {
-        return <div className="navbar-menu">
-                <div>
+        return <nav className="navbar-menu">
+                <div className='navbar-brand navbar-item'>
                     <Link to="/">
-                        <h2 className='navbar-item navbar-brand'>Jo Brimblecombe</h2>   
+                        <h2 className='navbar-item'>Jo Brimblecombe</h2>   
                     </Link>
                 </div>
-                <>
-                    <a>    
-                        <Link className='navbar-end navbar-item' to="/aboutMe">About Me</Link>
+                <section className='navbar-end'>
+                    <a className='navbar-end navbar-item'>
+                        <Link to="/aboutMe">About Me</Link>
                     </a>
-                    <a>
-                        <Link className='navbar-end navbar-item' to="/books">Books</Link>
+                    <a className='navbar-end navbar-item'>
+                        <Link to="/books">Books</Link>
                     </a>
-                    <a>
-                        <Link className='navbar-end navbar-item' to="/blog">Blog</Link>
+                    <a className='navbar-end navbar-item'>
+                        <Link to="/blog">Blog</Link>
                     </a>
-                    <a>
-                        <Link className='navbar-end navbar-item' to="/newsletter">Newsletter</Link>
+                    <a className='navbar-end navbar-item'>
+                        <Link to="/newsletter">Newsletter</Link>
                     </a>
-                </>
-        </div>
+                </section>
+        </nav>
     }
 }
