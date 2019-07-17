@@ -98,14 +98,10 @@ export default class Newsletter extends Component {
     handleSubmit = event => {
         event.preventDefault();
         const { firstName, lastName, email } = this.state;
-        console.log(firstName);
-        console.log(lastName);
-        console.log(email);
-        // axios.post(mailingListAPI),
-        //     {
-        //         firstName: firstName,
-        //         lastName: lastName,
-        //         email: this.state.email
-        //     };
+        axios.post(mailingListAPI, {
+            firstName: firstName,
+            lastName: lastName,
+            email: email
+        });
     };
 }
