@@ -14,23 +14,23 @@ export default class Navbar extends Component {
     render() {
         return <nav className="navbar-menu">
                 <div className='navbar-brand navbar-item'>
-                    <Link to="/">
+                    <Link to="/aboutMe">
                         <h2 className='navbar-item'>Jo Brimblecombe</h2>   
                     </Link>
                 </div>
                 <section className='navbar-end'>
-                    <a className='navbar-end navbar-item'>
+                    <p className='navbar-end navbar-item'>
                         <Link to="/aboutMe">About Me</Link>
-                    </a>
-                    <a className='navbar-end navbar-item'>
+                    </p>
+                    <p className='navbar-end navbar-item'>
                         <Link to="/books">Books</Link>
-                    </a>
-                    <a className='navbar-end navbar-item'>
+                    </p>
+                    <p className='navbar-end navbar-item'>
                         <Link to="/blog">Blog</Link>
-                    </a>
-                    <a className='navbar-end navbar-item'>
+                    </p>
+                    <p className='navbar-end navbar-item'>
                         <Link to="/newsletter">Newsletter</Link>
-                    </a>
+                    </p>
                 </section>
         </nav>
     }
