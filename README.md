@@ -114,6 +114,7 @@ US 8: As the client I can write a blog
 # Client communications:
 
 # Screenshots of Trello board(s):
+![trellosnap](https://user-images.githubusercontent.com/47685649/61352257-43fee700-a8b0-11e9-9f6a-186387855c5a.PNG)
 
 https://trello.com/b/00yyNtI7/mern-project
 
