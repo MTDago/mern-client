@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
 import { bookAPI } from '../API/init';
+import '../App.sass'
 
 // const CURRENCY = 'AUD';
 
@@ -28,12 +29,14 @@ const onToken = (amount, description) => token =>
 
 const CheckoutForm = ({ name, description, amount }) =>
   <StripeCheckout
+    className='container'
     // name={name}
     // description={description}
     // amount={fromAUDToCent(amount)}
     token={onToken}
     // currency={CURRENCY}
     stripeKey="pk_test_r1EmAHl6wPYYC0jA3wwdTYHC00JafccmBa"
+    label='Buy Now'
   />
 
 export default CheckoutForm;
