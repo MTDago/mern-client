@@ -4,7 +4,6 @@
 // import { bookAPI } from '../API/init';
 // import '../App.sass'
 
-
 // const CURRENCY = 'AUD';
 
 // const fromAUDToCent = amount => amount * 100;

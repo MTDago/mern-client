@@ -23,7 +23,7 @@ export default class NewBook extends Component {
                 }`
             )
             .then(result => {
-                let { title, content, date, tags} = result.data;
+                let { title, content, date, tags } = result.data;
                 this.setState({
                     title: title,
                     content: content,
