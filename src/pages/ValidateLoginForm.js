@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import Title from '../components/Title';
+import Title from '../components/layout/Title';
 
 const ValidatedLoginForm = () => (
     <Formik

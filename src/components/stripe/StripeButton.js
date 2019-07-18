@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
-import '../App.sass'
+import '../../App.sass'
 
 
 
