@@ -28,6 +28,7 @@ export default class Book extends Component {
                         <p>{object.blurb}</p>
                         </div>
                     })}
+                    {console.log(this.state.books)}
                 </div>
             </section>
         )

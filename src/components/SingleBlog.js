@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-// import { bookAPI } from '../API/init'
+import { blogAPI } from '../API/init'
 import '../App.sass'
 
 
@@ -10,25 +10,22 @@ export default class SingleBook extends Component {
         super(props)
         this.state = {
             id: this.props.match.params.id,
-            title: 'TEst',
-            blurb: '',
-            cost: '',
-            published: '',
-            series: ''
+            title: 'BLOG TEST',
+            content: '',
+            date: '',
+            tags: []
         }
     }
     
 
     componentDidMount = () => {
-        // Refactor the axios to use bookAPI + this.state.id
-        axios.get(`https://mern-server-deployment.herokuapp.com/books/${this.state.id}`).then(result => {
-        let {title, blurb, cost, published, series} = result.data
+        axios.get(`https://mern-server-deployment.herokuapp.com/blogs/${this.state.id}`).then(result => {
+        let {title, content, tags, date} = result.data
         this.setState({
             title: title,
-            blurb: blurb,
-            cost: cost,
-            published: published,
-            series: series
+            content: content,
+            date: date,
+            tags: tags    
         })
         })
     }
@@ -36,9 +33,9 @@ export default class SingleBook extends Component {
     render() {
         return <div>
             <button>{this.state.title}</button>
-            description: 
-            <p>{this.state.blurb}</p>
-            <p> {this.API} </p>
+            content: 
+            {this.state.id}
+            <p>{this.state.content}</p>
         </div>
     }
 }

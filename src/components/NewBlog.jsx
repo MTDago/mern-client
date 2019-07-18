@@ -58,7 +58,7 @@ export default class NewBook extends Component {
     };
 
     render() {
-        const { title, content, tags } = this.state;
+        const { title, content } = this.state;
         return (
             <div>
                 <Title title="New Blog Post:" />
@@ -142,7 +142,7 @@ export default class NewBook extends Component {
                                 class="button is-danger is-outlined"
                                 onClick={() => this.deleteTag(index)}
                             >
-                                <span>{tag}</span>
+                                <span>{tag + '  X'}</span>
                                 <span class="icon is-small">
                                     <i class="fas fa-times" />
                                 </span>
