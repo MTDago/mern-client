@@ -56,6 +56,7 @@ export default class NewBook extends Component {
                             placeholder="Enter the Title"
                             value={title}
                             onChange={this.handleChange}
+                            required
                         />
 
                         <br/><br/><br/>
@@ -73,6 +74,7 @@ export default class NewBook extends Component {
                             type="number"
                             value={cost}
                             onChange={this.handleChange}
+                            required
                         />
 
                         <br/><br/><br/>
@@ -91,6 +93,7 @@ export default class NewBook extends Component {
                             placeholder="Enter the blurb"
                             value={blurb}
                             onChange={this.handleChange}
+                            required
                         />
 
                         <br/><br/><br/>
@@ -108,6 +111,7 @@ export default class NewBook extends Component {
                             value={published}
                             onChange={this.handleChange}
                             />
+                            required
 
                         <br/><br/><br/>
 

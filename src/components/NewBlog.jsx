@@ -24,7 +24,12 @@ export default class NewBook extends Component {
             content: content,
             tags: tags,
             date: Date.now
-        });
+        }).then(
+                  <Redirect
+            to={{
+              pathname: "/",
+            }}
+        />)
         // THIS IS WHERE YOU NEED TO REDIRECT
         console.log('Something happened');
     };
@@ -53,7 +58,7 @@ export default class NewBook extends Component {
     };
 
     render() {
-        const { title, content, tags } = this.state;
+        const { title, content } = this.state;
         return (
             <div>
                 <Title title="New Blog Post:" />
@@ -76,6 +81,7 @@ export default class NewBook extends Component {
                             placeholder="Enter the Title"
                             value={title}
                             onChange={this.handleChange}
+                            required
                         />
 
                         <br />
@@ -96,6 +102,7 @@ export default class NewBook extends Component {
                             type="text"
                             value={content}
                             onChange={this.handleChange}
+                            required
                         />
 
                         <br />
@@ -135,7 +142,7 @@ export default class NewBook extends Component {
                                 class="button is-danger is-outlined"
                                 onClick={() => this.deleteTag(index)}
                             >
-                                <span>{tag}</span>
+                                <span>{tag + '  X'}</span>
                                 <span class="icon is-small">
                                     <i class="fas fa-times" />
                                 </span>

@@ -24,7 +24,7 @@ export default class Blog extends Component {
                 <div>
                     {this.state.blogs.map(object => {
                         return <div key={object._id} className='tile is-parent box'>
-                            <h2 className='heading'>{object.title}</h2>
+                            <a href={"/blogs/" + object._id}><h2 className='heading'>{object.title}</h2></a>
                             <article className='section'>{object.content}</article>
                             {object.tags.map(tag => {
                                 return <p className='level-item has-text-centered is-hidden'>{tag}</p>
