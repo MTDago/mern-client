@@ -13,7 +13,6 @@ import './App.sass';
 
 import NewBook from './components/NewBook';
 import NewBlog from './components/NewBlog';
-import CheckoutForm from './components/CheckoutForm';
 import EditBook from './components/EditBook';
 import EditBlog from './components/EditBlog';
 import CheckoutForm from './components/CheckoutForm'
@@ -35,7 +34,7 @@ function App() {
             <Route path="/blog/:id" component={SingleBlog} />
             <Route path="/blog/add" component={NewBlog} />
             <Route path="/blog/:id/edit" component={EditBlog} />
-            <Route path="/books/:id" component={CheckoutForm} />
+            {/* <Route path="/books/:id" component={CheckoutForm} /> */}
             <Route path="/books/:id" component={stripeButton} />           
         </>
     );

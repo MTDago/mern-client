@@ -10,7 +10,7 @@ export default class SingleBook extends Component {
         super(props)
         this.state = {
             id: this.props.match.params.id,
-            title: 'TEst',
+            title: 'Book Title Placeholder',
             blurb: '',
             cost: '',
             published: '',
@@ -34,12 +34,11 @@ export default class SingleBook extends Component {
     }
 
     render() {
-        return <div>
-            <button>{this.state.title}</button>
-            description: 
-            <p>{this.state.blurb}</p>
-            <p> {this.API} </p>
-            <a href={"/books/" + this.state.id + "/edit"}>Edit</a>
+        return <div className="container is-fluid column is-mobile is-centered">
+            <h1 className="title is-2">{this.state.title}</h1>
+            About the Book: 
+            <article className="section">{this.state.blurb}</article>
+            <a href={"/books/" + this.state.id + "/edit"}><button className="button is-rounded">Edit</button></a>
         </div>
     }
 }
