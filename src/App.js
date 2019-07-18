@@ -12,7 +12,8 @@ import SingleBlog from './components/SingleBlog'
 import './App.sass';
 import NewBook from './components/NewBook'
 import NewBlog from './components/NewBlog'
-// import CheckoutForm from './components/CheckoutForm'
+import CheckoutForm from './components/CheckoutForm'
+import EditBook from './components/EditBook'
 import stripeButton from './components/StripeButton';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             {/* <Route exact path ="/login" component={LoginForm} /> */}
             <Route exact path="/login" component={ValidatedLoginForm} />
             <Route path="/books/:id" component={SingleBook} />
+            <Route path="/books/:id/edit" component={EditBook} />
             <Route path="/blog/:id" component={SingleBlog} />
             <Route path="/books/add" component={NewBook} />
             <Route path="/blog/add" component={NewBlog} />  
