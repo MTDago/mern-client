@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import '../App.sass';
+import '../../App.sass';
 
 export default class Navbar extends Component {
     state = {

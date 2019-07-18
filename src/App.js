@@ -1,22 +1,29 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import './App.sass';
+
+// Layout and Pages
+import Navbar from './components/layout/Navbar';
 import AboutMe from './pages/AboutMe';
 import Books from './pages/Books';
 import Blog from './pages/Blog';
 import Newsletter from './pages/Newsletter';
-// import LoginForm from './components/LoginForm';
+// import LoginForm from './components/pages/LoginForm';
 import ValidatedLoginForm from './pages/ValidateLoginForm';
-import SingleBook from './components/SingleBook';
-import SingleBlog from './components/SingleBlog';
-import './App.sass';
 
-import NewBook from './components/NewBook';
-import NewBlog from './components/NewBlog';
-import EditBook from './components/EditBook';
-import EditBlog from './components/EditBlog';
-import CheckoutForm from './components/CheckoutForm'
-import stripeButton from './components/StripeButton';
+// Book
+import SingleBook from './components/book/SingleBook';
+import NewBook from './components/book/NewBook';
+import EditBook from './components/book/EditBook';
+
+// Blog
+import SingleBlog from './components/blog/SingleBlog';
+import NewBlog from './components/blog/NewBlog';
+import EditBlog from './components/blog/EditBlog';
+
+// Stripe
+import CheckoutForm from './components/stripe/CheckoutForm'
+import stripeButton from './components/stripe/StripeButton';
 
 function App() {
     return (

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Title from '../components/Title';
-import '../App.sass';
-import { blogAPI } from '../API/init';
+import Title from '../../components/layout/Title';
+import '../../App.sass';
+import { blogAPI } from '../../API/init';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 

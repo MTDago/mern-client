@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 // import { blogAPI } from '../API/init'
-import '../App.sass';
+import '../../App.sass';
 
 export default class SingleBook extends Component {
     constructor(props) {
