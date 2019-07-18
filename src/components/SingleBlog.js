@@ -34,15 +34,11 @@ export default class SingleBook extends Component {
     };
 
     render() {
-        return (
-            <div>
-                <button>{this.state.title}</button>
-                content:
-                {this.state.id}
-                <p>{this.state.content}</p>
-                <a href={'/blog/' + this.state.id + '/edit'}>Edit</a>
-            </div>
-        );
+        return <div className="container is-fluid column is-mobile is-centered">
+            <h1 className="title is-2">{this.state.title}</h1>
+            <article className="section">{this.state.content}</article>
+            <a href={"/books/" + this.state.id + "/edit"}><button className="button is-rounded">Edit</button></a>
+        </div>
     }
 }
 // const { getBook } = this.context

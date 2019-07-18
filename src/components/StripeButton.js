@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
+import '../App.sass'
+
 
 
 const stripeButton = () => {
@@ -26,6 +28,7 @@ const stripeButton = () => {
 
   return (
     <StripeCheckout
+    className="button is-rounded"
       label="Buy Now" 
       name="Jo book title" 
       description="sci fi book."    
