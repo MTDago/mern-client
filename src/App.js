@@ -11,7 +11,8 @@ import SingleBook from './components/SingleBook';
 import './App.sass';
 import NewBook from './components/NewBook'
 import NewBlog from './components/NewBlog'
-import CheckoutForm from './components/CheckoutForm'
+// import CheckoutForm from './components/CheckoutForm'
+import stripeButton from './components/StripeButton';
 
 function App() {
     return (
@@ -26,7 +27,9 @@ function App() {
             <Route path="/books/:id" component={SingleBook} />
             <Route path="/books/add" component={NewBook} />
             <Route path="/blog/add" component={NewBlog} />  
-            <Route path="/books/:id" component={CheckoutForm} />           
+            {/* <Route path="/books/:id" component={CheckoutForm} />  */}
+            <Route path="/books/:id" component={stripeButton} />           
+
         </>
     );
 }
