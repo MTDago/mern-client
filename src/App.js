@@ -11,7 +11,7 @@ import SingleBook from './components/SingleBook';
 import './App.sass';
 import NewBook from './components/NewBook'
 import NewBlog from './components/NewBlog'
-import CheckoutForm from './pages/CheckoutForm'
+import CheckoutForm from './components/CheckoutForm'
 
 function App() {
     return (
@@ -26,7 +26,7 @@ function App() {
             <Route path="/books/:id" component={SingleBook} />
             <Route path="/books/add" component={NewBook} />
             <Route path="/blog/add" component={NewBlog} />  
-            <Route path="/book/:id" component={CheckoutForm} />           
+            <Route path="/books/:id" component={CheckoutForm} />           
         </>
     );
 }
