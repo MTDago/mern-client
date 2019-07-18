@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import {bookAPI} from '../API/init'
+import { bookAPI } from '../API/init'
+import '../App.sass'
 
 
 export default class SingleBook extends Component {
@@ -19,7 +20,10 @@ export default class SingleBook extends Component {
     }
 
     render() {
-        return <p> {this.singleBookAPI} </p>
+        return <div>
+            This is the single book page
+            <p> {this.singleBookAPI} </p>
+        </div>
     }
 }
 // const { getBook } = this.context 
