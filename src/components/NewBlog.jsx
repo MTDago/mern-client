@@ -24,7 +24,12 @@ export default class NewBook extends Component {
             content: content,
             tags: tags,
             date: Date.now
-        });
+        }).then(
+                  <Redirect
+            to={{
+              pathname: "/",
+            }}
+        />)
         // THIS IS WHERE YOU NEED TO REDIRECT
         console.log('Something happened');
     };
@@ -76,6 +81,7 @@ export default class NewBook extends Component {
                             placeholder="Enter the Title"
                             value={title}
                             onChange={this.handleChange}
+                            required
                         />
 
                         <br />
@@ -96,6 +102,7 @@ export default class NewBook extends Component {
                             type="text"
                             value={content}
                             onChange={this.handleChange}
+                            required
                         />
 
                         <br />
