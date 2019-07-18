@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import { blogAPI } from '../API/init'
+// import { bookAPI } from '../API/init'
 import '../../App.sass';
 
 export default class SingleBook extends Component {
@@ -8,37 +8,45 @@ export default class SingleBook extends Component {
         super(props);
         this.state = {
             id: this.props.match.params.id,
-            title: 'BLOG TEST',
-            content: '',
-            date: '',
-            tags: []
+            title: 'Book Title Placeholder',
+            blurb: '',
+            cost: '',
+            published: '',
+            series: ''
         };
     }
 
     componentDidMount = () => {
+        // Refactor the axios to use bookAPI + this.state.id
         axios
             .get(
-                `https://mern-server-deployment.herokuapp.com/blogs/${
+                `https://mern-server-deployment.herokuapp.com/books/${
                     this.state.id
                 }`
             )
             .then(result => {
-                let { title, content, tags, date } = result.data;
+                let { title, blurb, cost, published, series } = result.data;
                 this.setState({
                     title: title,
-                    content: content,
-                    date: date,
-                    tags: tags
+                    blurb: blurb,
+                    cost: cost,
+                    published: published,
+                    series: series
                 });
             });
     };
 
     render() {
-        return <div className="container is-fluid column is-mobile is-centered">
-            <h1 className="title is-2">{this.state.title}</h1>
-            <article className="section">{this.state.content}</article>
-            <a href={"/books/" + this.state.id + "/edit"}><button className="button is-rounded">Edit</button></a>
-        </div>
+        return (
+            <div className="container is-fluid column is-mobile is-centered">
+                <h1 className="title is-2">{this.state.title}</h1>
+                About the Book:
+                <article className="section">{this.state.blurb}</article>
+                <a href={'/books/' + this.state.id + '/edit'}>
+                    <button className="button is-rounded">Edit</button>
+                </a>
+            </div>
+        );
     }
 }
 // const { getBook } = this.context
