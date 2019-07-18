@@ -39,6 +39,7 @@ export default class SingleBook extends Component {
             description: 
             <p>{this.state.blurb}</p>
             <p> {this.API} </p>
+            <a href={"/books/" + this.state.id + "/edit"}>Edit</a>
         </div>
     }
 }

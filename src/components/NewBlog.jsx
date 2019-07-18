@@ -19,19 +19,17 @@ export default class NewBook extends Component {
         event.preventDefault();
         const { title, content } = this.state;
         const tags = this.state.tagArray;
-        axios.post(blogAPI, {
-            title: title,
-            content: content,
-            tags: tags,
-            date: Date.now
-        }).then(
-                  <Redirect
-            to={{
-              pathname: "/",
-            }}
-        />)
-        // THIS IS WHERE YOU NEED TO REDIRECT
-        console.log('Something happened');
+        axios
+            .post(blogAPI, {
+                title: title,
+                content: content,
+                tags: tags,
+                date: Date.now
+            })
+            .then(function(value) {
+                console.log('THis should work');
+                window.location.reload();
+            });
     };
 
     handleChange = event => {
@@ -153,7 +151,11 @@ export default class NewBook extends Component {
                         <br />
                         <br />
 
-                        <button className="button is-rounded" type="submit">
+                        <button
+                            className="button is-rounded"
+                            type="submit"
+                            href="/"
+                        >
                             Post
                         </button>
                     </div>

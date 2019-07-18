@@ -6,29 +6,50 @@ import axios from 'axios';
 
 export default class NewBook extends Component {
     state = {
-        title: '',
+        id: this.props.match.params.id,
+        title: 'THIS SHOULD BE A BOOK',
         cost: '',
         blurb: '',
         published: '',
         series: ''
     };
 
+    UNSAFE_componentWillMount = () => {
+        // Refactor the axios to use bookAPI + this.state.id
+        axios
+            .get(
+                `https://mern-server-deployment.herokuapp.com/books/${
+                    this.state.id
+                }`
+            )
+            .then(result => {
+                let { title, blurb, cost, published, series } = result.data;
+                this.setState({
+                    title: title,
+                    blurb: blurb,
+                    cost: cost,
+                    series: series
+                });
+            });
+    };
+
     handleSubmit = event => {
         event.preventDefault();
         const { title, cost, blurb, published, series } = this.state;
         axios
-            .post(bookAPI, {
-                title: title,
-                cost: cost,
-                blurb: blurb,
-                published: published,
-                series: series
-            })
-            .then(function(value) {
-                console.log('THis should work');
-                window.location.reload();
-            });
-        console.log('SOmethign happened');
+            .put(
+                `https://mern-server-deployment.herokuapp.com/books/${
+                    this.state.id
+                }`,
+                {
+                    title: title,
+                    cost: cost,
+                    blurb: blurb,
+                    published: published,
+                    series: series
+                }
+            )
+            .then(console.log(this.state.id));
     };
 
     handleChange = event => {
@@ -37,11 +58,25 @@ export default class NewBook extends Component {
         });
     };
 
+    deleteBook = event => {
+        event.preventDefault();
+        axios
+            .delete(
+                `https://mern-server-deployment.herokuapp.com/books/${
+                    this.state.id
+                }`
+            )
+            .then(function(value) {
+                console.log('THis should work');
+                window.location.reload();
+            });
+    };
+
     render() {
         const { title, cost, blurb, published, series } = this.state;
         return (
             <div>
-                <Title title="Add a book to sell." />
+                <Title title="Edit Book:" />
                 <form
                     className="columns is-mobile is-centered"
                     onSubmit={this.handleSubmit}
@@ -63,9 +98,11 @@ export default class NewBook extends Component {
                             onChange={this.handleChange}
                             required
                         />
+
                         <br />
                         <br />
                         <br />
+
                         {/* COST*/}
                         <label
                             className="label has-text-centered is-uppercase"
@@ -81,9 +118,11 @@ export default class NewBook extends Component {
                             onChange={this.handleChange}
                             required
                         />
+
                         <br />
                         <br />
                         <br />
+
                         {/* BLURB */}
                         <label
                             className="label has-text-centered is-uppercase"
@@ -100,9 +139,11 @@ export default class NewBook extends Component {
                             onChange={this.handleChange}
                             required
                         />
+
                         <br />
                         <br />
                         <br />
+
                         {/* PUBLISHED */}
                         <label
                             className="label has-text-centered is-uppercase"
@@ -112,15 +153,17 @@ export default class NewBook extends Component {
                         </label>
                         <input
                             className="input is-rounded"
-                            type="month"
+                            type="date"
                             name="published"
                             value={published}
                             onChange={this.handleChange}
+                            required
                         />
-                        required
+
                         <br />
                         <br />
                         <br />
+
                         {/* SERIES */}
                         <label
                             className="label has-text-centered is-uppercase"
@@ -135,13 +178,18 @@ export default class NewBook extends Component {
                             value={series}
                             onChange={this.handleChange}
                         />
+
                         <br />
                         <br />
+
                         <button className="button is-rounded" type="submit">
                             Submit
                         </button>
                     </div>
                 </form>
+                <button className="button is-rounded" onClick={this.deleteBook}>
+                    Delete Book
+                </button>
             </div>
         );
     }
