@@ -8,9 +8,10 @@ const stripeButton = () => {
    
   const onToken = token => {
     const body = {
-      amount: '',
-      token: token
+      amount: 999,
+      token: token.id
   };
+
   axios
       .post("http://localhost:5000/payment", body)
       .then(response => {
@@ -22,12 +23,13 @@ const stripeButton = () => {
         alert("Payment Error");
       });
   };
+
   return (
     <StripeCheckout
       label="Buy Now" 
       name="Jo book title" 
       description="sci fi book."    
-      amount={''} 
+    //   amount={999} 
       token={onToken}
       stripeKey={publishableKey}
       billingAddress={false}
