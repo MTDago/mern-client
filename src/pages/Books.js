@@ -31,6 +31,7 @@ export default class Book extends Component {
                             </div>
                         );
                     })}
+                    
                     {console.log(this.state.books)}
                 </div>
             </section>
