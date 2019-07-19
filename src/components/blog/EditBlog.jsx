@@ -35,7 +35,7 @@ export default class NewBook extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        const { title, content, date } = this.state;
+        const { title, content, date, id } = this.state;
         const tags = this.state.tagArray;
         axios
             .put(
@@ -51,7 +51,7 @@ export default class NewBook extends Component {
             )
             .then(function(value) {
                 console.log('THis should work');
-                window.location.reload();
+                window.location.replace(`/blog/${id}/show`);
             });
     };
 
