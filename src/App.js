@@ -24,6 +24,7 @@ import EditBlog from './components/blog/EditBlog';
 // Stripe
 import CheckoutForm from './components/stripe/CheckoutForm'
 import stripeButton from './components/stripe/StripeButton';
+import ImageUpload from './components/book/ImageUpload';
 
 function App() {
     return (
@@ -37,6 +38,7 @@ function App() {
             <Route exact path="/login" component={ValidatedLoginForm} />
             <Route path="/books/:id" component={SingleBook} />
             <Route path="/books/add" component={NewBook} />
+            <Route path="/books/add" component={ImageUpload} />
             <Route path="/books/:id/edit" component={EditBook} />
             <Route path="/blog/:id" component={SingleBlog} />
             <Route path="/blog/add" component={NewBlog} />

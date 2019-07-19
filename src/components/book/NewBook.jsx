@@ -10,21 +10,19 @@ export default class NewBook extends Component {
         cost: '',
         blurb: '',
         published: '',
-        series: '',
-        image: null
+        series: ''
     };
 
     handleSubmit = event => {
         event.preventDefault();
-        const { title, cost, blurb, published, series, image } = this.state;
+        const { title, cost, blurb, published, series } = this.state;
         axios
             .post(bookAPI, {
                 title: title,
                 cost: cost,
                 blurb: blurb,
                 published: published,
-                series: series,
-                image: image
+                series: series
             })
             .then(function(value) {
                 console.log('THis should work');
@@ -40,7 +38,7 @@ export default class NewBook extends Component {
     };
 
     render() {
-        const { title, cost, blurb, published, series, image } = this.state;
+        const { title, cost, blurb, published, series } = this.state;
         return (
             <div>
                 <Title title="Add a book to sell." />
@@ -135,22 +133,6 @@ export default class NewBook extends Component {
                             type="text"
                             name="series"
                             value={series}
-                            onChange={this.handleChange}
-                        />
-                        <br />
-                        <br />
-                        {/* SERIES */}
-                        <label
-                            className="label has-text-centered is-uppercase"
-                            htmlFor="series"
-                        >
-                            Image:
-                        </label>
-                        <input
-                            className="input is-rounded"
-                            type="file"
-                            name="image"
-                            value={image}
                             onChange={this.handleChange}
                         />
                         <br />
