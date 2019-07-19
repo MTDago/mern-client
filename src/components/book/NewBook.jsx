@@ -11,7 +11,8 @@ export default class NewBook extends Component {
         blurb: '',
         published: '',
         series: '',
-        image: null
+        image: null,
+        redirect: false
     };
 
     handleSubmit = event => {
@@ -28,7 +29,7 @@ export default class NewBook extends Component {
             })
             .then(function(value) {
                 console.log('THis should work');
-                window.location.reload();
+                window.location.replace('/aboutMe');
             });
         console.log('SOmethign happened');
     };
