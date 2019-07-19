@@ -13,11 +13,15 @@ export default class AboutMe extends Component {
     componentDidMount = () => {
         axios.get(blogAPI).then(result => {
             const allBlogs = [...result.data];
-            const blogToLoad = allBlogs[allBlogs.length - 1];
-            this.setState({
-                blogTitle: blogToLoad.title,
-                blogContent: blogToLoad.content
-            });
+            if (allBlogs.length > 0) {
+                const blogToLoad = allBlogs[allBlogs.length - 1];
+                this.setState({
+                    blogTitle: blogToLoad.title,
+                    blogContent: blogToLoad.content
+                });
+            } else {
+                console.log('No Blog Posts!');
+            }
         });
     };
 
@@ -27,16 +31,24 @@ export default class AboutMe extends Component {
                 <article className="column is-half article">
                     <Title title="About Me" />
                     <p className="section">
-                        Umami consequat aute nulla ut quinoa hella humblebrag
-                        cold-pressed cloud bread. Taiyaki synth sustainable,
-                        prism mixtape mustache raclette +1 distillery taxidermy
-                        lumbersexual. Semiotics hashtag mixtape minim chambray
-                        hella blue bottle man bun listicle messenger bag mollit
-                        culpa taxidermy scenester ethical. Selfies keffiyeh
-                        knausgaard tilde pabst listicle artisan proident salvia
-                        deep v. Oh. You need a little dummy text for your
-                        mockup? How quaint. I bet you’re still using Bootstrap
-                        too…
+                        Jo Brimblecombe is an aspiring time traveller who has
+                        yet to make the leap from theory to practice. It’s not
+                        for want of trying. As part of her Masters Degree in
+                        Philosophy, she studied the ‘Philosophy of Time Travel’.
+                        Her grades were definitely good enough to warrant an
+                        attempt at the practical side. Her knowledge of physics,
+                        however, is woefully inadequate. Her practical
+                        engineering skills also leave a lot to be desired.
+                        Having said that, she does have a good grasp of the
+                        theory, so she is writing time travel fiction. She
+                        reasons that if the books are entertaining enough,
+                        future beings might travel back in time and sneak her on
+                        a time- travelling adventure far, far beyond her mortal
+                        time-line.
+                        <br />
+                        <br />
+                        “Hope springs eternal” and “Closed timelike curves be
+                        damned” are two of her favourite sayings.
                     </p>
                 </article>
                 <article className="column is-half">
