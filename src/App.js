@@ -42,7 +42,7 @@ function App() {
             <Route exact path="/blog/add" component={NewBlog} />
             <Route exact path="/blog/:id/edit" component={EditBlog} />
             {/* <Route path="/books/:id" component={CheckoutForm} /> */}
-            <Route exact path="/books/:id" component={stripeButton} />
+            <Route exact path="/books/:id/show" component={stripeButton} />
         </>
     );
 }
