@@ -28,7 +28,7 @@ export default class Blog extends Component {
                                 key={object._id}
                                 className="tile is-parent box"
                             >
-                                <a href={'/blog/' + object._id}>
+                                <a href={'/blog/' + object._id + '/show'}>
                                     <h2 className="heading">{object.title}</h2>
                                 </a>
                                 <article className="section">
