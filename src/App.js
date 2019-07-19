@@ -36,11 +36,11 @@ function App() {
             {/* <Route exact path ="/login" component={LoginForm} /> */}
             <Route exact path="/login" component={ValidatedLoginForm} />
             <Route exact path="/books/add" component={NewBook} />
-            <Route path="/books/:id" component={SingleBook} />
+            <Route exact path="/books/:id/show" component={SingleBook} />
             <Route exact path="/books/:id/edit" component={EditBook} />
-            <Route path="/blog/:id" component={SingleBlog} />
-            <Route path="/blog/add" component={NewBlog} />
-            <Route path="/blog/:id/edit" component={EditBlog} />
+            <Route exact path="/blog/:id/show" component={SingleBlog} />
+            <Route exact path="/blog/add" component={NewBlog} />
+            <Route exact path="/blog/:id/edit" component={EditBlog} />
             {/* <Route path="/books/:id" component={CheckoutForm} /> */}
             <Route path="/books/:id" component={stripeButton} />
         </>
