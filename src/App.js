@@ -22,7 +22,7 @@ import NewBlog from './components/blog/NewBlog';
 import EditBlog from './components/blog/EditBlog';
 
 // Stripe
-import CheckoutForm from './components/stripe/CheckoutForm'
+import CheckoutForm from './components/stripe/CheckoutForm';
 import stripeButton from './components/stripe/StripeButton';
 
 function App() {
@@ -42,7 +42,7 @@ function App() {
             <Route path="/blog/add" component={NewBlog} />
             <Route path="/blog/:id/edit" component={EditBlog} />
             {/* <Route path="/books/:id" component={CheckoutForm} /> */}
-            <Route path="/books/:id" component={stripeButton} />           
+            <Route path="/books/:id" component={stripeButton} />
         </>
     );
 }
