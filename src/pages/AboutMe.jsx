@@ -1,8 +1,26 @@
 import React, { Component } from 'react';
 import Title from '../components/layout/Title';
 import '../App.sass';
+import axios from 'axios';
+import { blogAPI } from '../API/init';
 
 export default class AboutMe extends Component {
+    state = {
+        blogTitle: '',
+        blogContent: ''
+    };
+
+    componentDidMount = () => {
+        axios.get(blogAPI).then(result => {
+            const allBlogs = [...result.data];
+            const blogToLoad = allBlogs[allBlogs.length - 1];
+            this.setState({
+                blogTitle: blogToLoad.title,
+                blogContent: blogToLoad.content
+            });
+        });
+    };
+
     render() {
         return (
             <div className="container is-fluid columns is-mobile is-multiline">
@@ -34,19 +52,9 @@ export default class AboutMe extends Component {
                     <br />
                     <br />
                     <Title title="What's on my Desk?" />
-                    <p className="section has-text-left">
-                        Street art edison bulb gluten-free, tofu try-hard
-                        lumbersexual brooklyn tattooed pickled chambray.
-                        Actually humblebrag next level, deep v art party wolf
-                        tofu direct trade readymade sustainable hell of banjo.
-                        Organic authentic subway tile cliche palo santo, street
-                        art XOXO dreamcatcher retro sriracha portland air plant
-                        kitsch stumptown. Austin small batch squid gastropub.
-                        Pabst pug tumblr gochujang offal retro cloud bread
-                        bushwick semiotics before they sold out sartorial
-                        literally mlkshk. Vaporware hashtag vice, sartorial
-                        before they sold out pok pok health goth trust fund
-                        cray.
+                    <p className="title is-5">{this.state.blogTitle}</p>
+                    <p className="section has-text-left subtitle is-6">
+                        {this.state.blogContent}
                     </p>
                 </article>
             </div>

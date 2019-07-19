@@ -27,8 +27,9 @@ export default class NewBook extends Component {
                 date: Date.now
             })
             .then(function(value) {
-                console.log('THis should work');
-                window.location.reload();
+                // THIS WORKS TO REDIRECT TO HOMEPAGE BUT IT RELOADS THE ENTIRE PAGE - SHOULD REPLACE
+                // ALSO NEEDS A NOTIFICATION TO BE SENT PROBABLY
+                window.location.replace('/aboutMe');
             });
     };
 
