@@ -23,9 +23,8 @@ import NewBlog from './components/blog/NewBlog';
 import EditBlog from './components/blog/EditBlog';
 
 // Stripe
-import CheckoutForm from './components/stripe/CheckoutForm';
+// import CheckoutForm from './components/stripe/CheckoutForm';
 import stripeButton from './components/stripe/StripeButton';
-
 
 function App() {
     return (
