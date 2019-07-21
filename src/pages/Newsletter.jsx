@@ -35,6 +35,11 @@ export default class Newsletter extends Component {
         return (
             <div>
                 <Title title="Newsletter" />
+                <h2 className="subtitle is-5">
+                    {' '}
+                    Want to keep Updated? Join the mailing list to stay informed
+                    on new books, blog posts and events:
+                </h2>
                 <form
                     className="columns is-mobile is-centered"
                     onSubmit={this.handleSubmit}
