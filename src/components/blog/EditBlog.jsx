@@ -157,7 +157,9 @@ export default class NewBook extends Component {
                             placeholder="Enter a tag"
                             id="tags"
                             onKeyPress={e => {
-                                e.target.keyCode === 13 && e.preventDefault();
+                                if (e.target.keyCode === 13) {
+                                    e.preventDefault();
+                                }
                             }}
                         />
                         <button
