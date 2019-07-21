@@ -3,7 +3,6 @@ import Title from '../../components/layout/Title';
 import '../../App.sass';
 import { blogAPI } from '../../API/init';
 import axios from 'axios';
-import { Redirect } from 'react-router-dom';
 
 export default class NewBook extends Component {
     constructor(props) {
@@ -45,6 +44,18 @@ export default class NewBook extends Component {
         this.setState({
             tagArray: [...this.state.tagArray, newTag]
         });
+        document.getElementById('tags').value = null;
+    };
+
+    onEnter = event => {
+        if (event.which === 13 /* Enter */) {
+            event.preventDefault();
+            let newTag = document.getElementById('tags').value;
+            this.setState({
+                tagArray: [...this.state.tagArray, newTag]
+            });
+            document.getElementById('tags').value = null;
+        }
     };
 
     deleteTag = event => {
@@ -122,9 +133,7 @@ export default class NewBook extends Component {
                             name="tags"
                             placeholder="Enter a tag"
                             id="tags"
-                            onKeyPress={e => {
-                                e.target.keyCode === 13 && e.preventDefault();
-                            }}
+                            onKeyPress={this.onEnter}
                         />
                         <button
                             className="button is-rounded"
@@ -138,12 +147,12 @@ export default class NewBook extends Component {
                         {this.state.tagArray.map((tag, index) => (
                             <a
                                 key={this.state.tagArray.indexOf(tag)}
-                                class="button is-danger is-outlined"
+                                className="button is-danger is-outlined"
                                 onClick={() => this.deleteTag(index)}
                             >
-                                <span>{tag + '  X'}</span>
-                                <span class="icon is-small">
-                                    <i class="fas fa-times" />
+                                <span>{'x' + tag}</span>
+                                <span className="icon is-small">
+                                    <i className="fas fa-times" />
                                 </span>
                             </a>
                         ))}
