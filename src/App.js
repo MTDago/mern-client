@@ -30,7 +30,8 @@ function App() {
     return (
         <>
             <Navbar />
-            <Route exact path="/aboutMe" component={AboutMe} />
+            <Route exact path="/" component={AboutMe} />
+            <Route exact path="/about" component={AboutMe} />
             <Route exact path="/books/" component={Books} />
             <Route exact path="/blog" component={Blog} />
             <Route exact path="/newsletter" component={Newsletter} />

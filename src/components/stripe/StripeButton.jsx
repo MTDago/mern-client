@@ -13,7 +13,7 @@ const stripeButton = () => {
         };
 
         axios
-            .post('http://localhost:5000/payment', body)
+            .post('http://localhost:3000/payment', body)
             .then(response => {
                 console.log(response);
                 alert('Payment Success');
@@ -30,7 +30,7 @@ const stripeButton = () => {
             label="Buy Now"
             name="Jo book title"
             description="sci fi book."
-            //   amount={999}
+            // amount={999}
             token={onToken}
             stripeKey={publishableKey}
             billingAddress={false}

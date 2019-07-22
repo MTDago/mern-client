@@ -15,13 +15,13 @@ export default class Navbar extends Component {
         return (
             <nav className="container is-fluid navbar-menu is-active is-dark">
                 <div className="navbar-brand navbar-item">
-                    <Link to="/aboutMe">
+                    <Link to="/about">
                         <h2 className="navbar-item">Jo Brimblecombe</h2>
                     </Link>
                 </div>
                 <section className="navbar-end">
                     <p className="navbar-end navbar-item">
-                        <Link to="/aboutMe">About Me</Link>
+                        <Link to="/about">About Me</Link>
                     </p>
                     <p className="navbar-end navbar-item">
                         <Link to="/books">Books</Link>
