@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import { bookAPI } from '../API/init'
+import { bookAPI } from '../../API/init';
 import '../../App.sass';
 
 export default class SingleBook extends Component {
@@ -18,22 +18,16 @@ export default class SingleBook extends Component {
 
     componentDidMount = () => {
         // Refactor the axios to use bookAPI + this.state.id
-        axios
-            .get(
-                `https://mern-server-deployment.herokuapp.com/books/${
-                    this.state.id
-                }`
-            )
-            .then(result => {
-                let { title, blurb, cost, published, series } = result.data;
-                this.setState({
-                    title: title,
-                    blurb: blurb,
-                    cost: cost,
-                    published: published,
-                    series: series
-                });
+        axios.get(bookAPI + '/' + this.state.id).then(result => {
+            let { title, blurb, cost, published, series } = result.data;
+            this.setState({
+                title: title,
+                blurb: blurb,
+                cost: cost,
+                published: published,
+                series: series
             });
+        });
     };
 
     render() {

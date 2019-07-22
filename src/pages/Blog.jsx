@@ -36,7 +36,10 @@ export default class Blog extends Component {
                                 </article>
                                 {object.tags.map(tag => {
                                     return (
-                                        <button className="button is-small is-rounded has-text-centered ">
+                                        <button
+                                            key={object.tags.indexOf(tag)}
+                                            className="button is-small is-rounded has-text-centered "
+                                        >
                                             {tag}
                                         </button>
                                     );

@@ -16,39 +16,29 @@ export default class NewBook extends Component {
 
     UNSAFE_componentWillMount = () => {
         // Refactor the axios to use bookAPI + this.state.id
-        axios
-            .get(
-                `https://mern-server-deployment.herokuapp.com/books/${
-                    this.state.id
-                }`
-            )
-            .then(result => {
-                let { title, blurb, cost, published, series } = result.data;
-                this.setState({
-                    title: title,
-                    blurb: blurb,
-                    cost: cost,
-                    series: series
-                });
+        axios.get(bookAPI + '/' + this.state.id).then(result => {
+            let { title, blurb, cost, published, series } = result.data;
+            this.setState({
+                title: title,
+                blurb: blurb,
+                cost: cost,
+                published: published,
+                series: series
             });
+        });
     };
 
     handleSubmit = event => {
         event.preventDefault();
         const { title, cost, blurb, published, series } = this.state;
         axios
-            .put(
-                `https://mern-server-deployment.herokuapp.com/books/${
-                    this.state.id
-                }`,
-                {
-                    title: title,
-                    cost: cost,
-                    blurb: blurb,
-                    published: published,
-                    series: series
-                }
-            )
+            .put(bookAPI + '/' + this.state.id, {
+                title: title,
+                cost: cost,
+                blurb: blurb,
+                published: published,
+                series: series
+            })
             .then(console.log(this.state.id));
     };
 
@@ -60,16 +50,10 @@ export default class NewBook extends Component {
 
     deleteBook = event => {
         event.preventDefault();
-        axios
-            .delete(
-                `https://mern-server-deployment.herokuapp.com/books/${
-                    this.state.id
-                }`
-            )
-            .then(function(value) {
-                console.log('THis should work');
-                window.location.reload();
-            });
+        axios.delete(bookAPI + '/' + this.state.id).then(function(value) {
+            console.log('THis should work');
+            window.location.reload();
+        });
     };
 
     render() {
@@ -187,7 +171,10 @@ export default class NewBook extends Component {
                         </button>
                     </div>
                 </form>
-                <button className="button is-rounded" onClick={this.deleteBook}>
+                <button
+                    className="button is-rounded is-danger"
+                    onClick={this.deleteBook}
+                >
                     Delete Book
                 </button>
             </div>
