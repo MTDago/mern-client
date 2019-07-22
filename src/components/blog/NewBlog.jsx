@@ -5,6 +5,7 @@ import { blogAPI } from '../../API/init';
 import axios from 'axios';
 
 export default class NewBook extends Component {
+    // Construct the state and props
     constructor(props) {
         super(props);
         this.state = {
@@ -26,9 +27,7 @@ export default class NewBook extends Component {
                 date: Date.now
             })
             .then(function(value) {
-                // THIS WORKS TO REDIRECT TO HOMEPAGE BUT IT RELOADS THE ENTIRE PAGE - SHOULD REPLACE
-                // ALSO NEEDS A NOTIFICATION TO BE SENT PROBABLY
-                window.location.replace('/aboutMe');
+                window.location.replace('/blog');
             });
     };
 
@@ -41,20 +40,17 @@ export default class NewBook extends Component {
     handleTags = event => {
         event.preventDefault();
         let newTag = document.getElementById('tags').value;
-        this.setState({
-            tagArray: [...this.state.tagArray, newTag]
-        });
+        if (this.state.tagArray.includes(newTag) !== true) {
+            this.setState({
+                tagArray: [...this.state.tagArray, newTag]
+            });
+        }
         document.getElementById('tags').value = null;
     };
 
     onEnter = event => {
         if (event.which === 13 /* Enter */) {
-            event.preventDefault();
-            let newTag = document.getElementById('tags').value;
-            this.setState({
-                tagArray: [...this.state.tagArray, newTag]
-            });
-            document.getElementById('tags').value = null;
+            this.handleTags(event);
         }
     };
 
@@ -145,7 +141,7 @@ export default class NewBook extends Component {
                         </button>
 
                         {this.state.tagArray.map((tag, index) => (
-                            <a
+                            <button
                                 key={this.state.tagArray.indexOf(tag)}
                                 className="button is-danger is-outlined"
                                 onClick={() => this.deleteTag(index)}
@@ -154,7 +150,7 @@ export default class NewBook extends Component {
                                 <span className="icon is-small">
                                     <i className="fas fa-times" />
                                 </span>
-                            </a>
+                            </button>
                         ))}
 
                         <br />

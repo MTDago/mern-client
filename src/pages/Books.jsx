@@ -23,7 +23,7 @@ export default class Book extends Component {
                 <div className="tile is-vertical is-8 is-parent">
                     {this.state.books.map(object => {
                         return (
-                            <div className="tile is-child box">
+                            <div key={object._id} className="tile is-child box">
                                 <a href={'/books/' + object._id + '/show'}>
                                     <h2 className="heading">{object.title}</h2>
                                 </a>

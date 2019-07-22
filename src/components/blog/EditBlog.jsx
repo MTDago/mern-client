@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Title from '../../components/layout/Title';
 import '../../App.sass';
-// import { blogAPI } from '../API/init';
+import { blogAPI } from '../../API/init';
 import axios from 'axios';
 
 export default class NewBook extends Component {
@@ -16,41 +16,33 @@ export default class NewBook extends Component {
 
     // Fill the state with the Blog from the Server
     UNSAFE_componentWillMount = () => {
-        axios
-            .get(
-                `https://mern-server-deployment.herokuapp.com/blogs/${
-                    this.state.id
-                }`
-            )
-            .then(result => {
-                let { title, content, date, tags } = result.data;
-                this.setState({
-                    title: title,
-                    content: content,
-                    date: date,
-                    tagArray: [...tags]
-                });
+        axios.get(blogAPI + '/' + this.state.id).then(result => {
+            let { title, content, date, tags } = result.data;
+            this.setState({
+                title: title,
+                content: content,
+                date: date,
+                tagArray: [...tags]
             });
+        });
     };
 
     handleSubmit = event => {
+        // Prevent page refresh
         event.preventDefault();
+
+        // Denature the state into the respective values
         const { title, content, date, id } = this.state;
         const tags = this.state.tagArray;
+
         axios
-            .put(
-                `https://mern-server-deployment.herokuapp.com/blogs/${
-                    this.state.id
-                }`,
-                {
-                    title: title,
-                    content: content,
-                    tags: tags,
-                    date: date
-                }
-            )
+            .put(blogAPI + '/' + this.state.id, {
+                title: title,
+                content: content,
+                tags: tags,
+                date: date
+            })
             .then(function(value) {
-                console.log('THis should work');
                 window.location.replace(`/blog/${id}/show`);
             });
     };
@@ -61,12 +53,23 @@ export default class NewBook extends Component {
         });
     };
 
+    // Tags
     handleTags = event => {
         event.preventDefault();
         let newTag = document.getElementById('tags').value;
-        this.setState({
-            tagArray: [...this.state.tagArray, newTag]
-        });
+        if (this.state.tagArray.includes(newTag) !== true) {
+            this.setState({
+                tagArray: [...this.state.tagArray, newTag]
+            });
+        }
+        document.getElementById('tags').value = null;
+    };
+
+    // If enter is pressed on the tag form
+    onEnter = event => {
+        if (event.which === 13 /* Enter */) {
+            this.handleTags(event);
+        }
     };
 
     deleteTag = event => {
@@ -78,25 +81,20 @@ export default class NewBook extends Component {
         });
     };
 
+    // Delete Blog
     deleteBlog = event => {
         event.preventDefault();
-        axios
-            .delete(
-                `https://mern-server-deployment.herokuapp.com/blogs/${
-                    this.state.id
-                }`
-            )
-            .then(function(value) {
-                console.log('THis should work');
-                window.location.reload();
-            });
+        axios.delete(blogAPI + '/' + this.state.id).then(function(value) {
+            console.log('THis should work');
+            window.location.replace('/about');
+        });
     };
 
     render() {
         const { title, content } = this.state;
         return (
             <div>
-                <Title title="New Blog Post:" />
+                <Title title="Edit Blog Post:" />
                 <form
                     className="columns is-mobile is-centered"
                     onSubmit={this.handleSubmit}
@@ -156,11 +154,7 @@ export default class NewBook extends Component {
                             name="tags"
                             placeholder="Enter a tag"
                             id="tags"
-                            onKeyPress={e => {
-                                if (e.target.keyCode === 13) {
-                                    e.preventDefault();
-                                }
-                            }}
+                            onKeyPress={this.onEnter}
                         />
                         <button
                             className="button is-rounded"
@@ -197,7 +191,10 @@ export default class NewBook extends Component {
                         </button>
                     </div>
                 </form>
-                <button className="button is-rounded" onClick={this.deleteBlog}>
+                <button
+                    className="button is-rounded is-danger is-centred"
+                    onClick={this.deleteBlog}
+                >
                     Delete Blog Post
                 </button>
             </div>
