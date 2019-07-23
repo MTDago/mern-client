@@ -107,6 +107,7 @@ US 8: As the client I can write a blog
 # Data Flow Diagram:
 
 # OO design documentation:
+![oo design diagram](https://user-images.githubusercontent.com/47685649/61674373-ee568e80-ad36-11e9-953c-1789a6aaf724.png)
 
 # Project plan & timeline:
 ![timeline](https://user-images.githubusercontent.com/47685649/61351984-8f64c580-a8af-11e9-9332-8ceb6c8b182a.PNG)
