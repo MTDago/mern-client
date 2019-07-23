@@ -186,5 +186,6 @@ The team worked well on communication and time management. We were able to work 
 
 ## Client Signoff
 
+[Client Signoff (1).pdf](https://github.com/michaeltwitt/mern-client/files/3420127/Client.Signoff.1.pdf)
 
 
