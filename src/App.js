@@ -15,10 +15,10 @@ import ValidatedLoginForm from './pages/ValidateLoginForm'
 import Secret from './components/secret'
 
 // Book
-import SingleBook from './components/book/SingleBook'
-import NewBook from './components/book/NewBook'
-import EditBook from './components/book/EditBook'
-import ImageUpload from './components/book/ImageUpload'
+import SingleBook from './components/book/SingleBook';
+import NewBook from './components/book/NewBook';
+import EditBook from './components/book/EditBook';
+
 
 // Blog
 import SingleBlog from './components/blog/SingleBlog'
@@ -26,8 +26,8 @@ import NewBlog from './components/blog/NewBlog'
 import EditBlog from './components/blog/EditBlog'
 
 // Stripe
-// import CheckoutForm from './components/stripe/CheckoutForm'
-import stripeButton from './components/stripe/StripeButton'
+// import stripeButton from './components/stripe/StripeButton';
+
 
 function App() {
     return (
@@ -44,13 +44,9 @@ function App() {
             <Route exact path="/books/:id/show" component={SingleBook} />
             <Route exact path="/books/:id/edit" component={EditBook} />
             <Route exact path="/blog/:id/show" component={SingleBlog} />
-            <Route exact path="/blog/add" component={NewBlog} />
-            <Route exact path="/blog/:id/edit" component={EditBlog} />
-            {/* <Route path="/books/:id" component={CheckoutForm} /> */}
-            <Route exact path="/books/:id/show" component={stripeButton} />
-            <Route exact path="/books/add" component={ImageUpload} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/secret" component={withAuth(Secret)} />
+
         </>
     )
 }

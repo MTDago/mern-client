@@ -3,6 +3,7 @@ import Title from '../../components/layout/Title';
 import '../../App.sass';
 import { bookAPI } from '../../API/init';
 import axios from 'axios';
+import ImageUpload from './ImageUpload';
 
 export default class NewBook extends Component {
     state = {
@@ -44,6 +45,7 @@ export default class NewBook extends Component {
         return (
             <div>
                 <Title title="Add a book to sell." />
+
                 <form
                     className="columns is-mobile is-centered"
                     onSubmit={this.handleSubmit}
@@ -67,6 +69,14 @@ export default class NewBook extends Component {
                         />
                         <br />
                         <br />
+                        <br />
+                        <label
+                            className="label has-text-centered is-uppercase"
+                            htmlFor="image"
+                        >
+                            Add an Image:
+                        </label>
+                        <ImageUpload />
                         <br />
                         {/* COST*/}
                         <label
