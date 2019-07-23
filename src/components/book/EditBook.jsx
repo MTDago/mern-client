@@ -39,7 +39,9 @@ export default class NewBook extends Component {
                 published: published,
                 series: series
             })
-            .then(console.log(this.state.id));
+            .then(function(value) {
+                window.location.replace('/about');
+            });
     };
 
     handleChange = event => {

@@ -28,7 +28,7 @@ export default class NewBook extends Component {
             })
             .then(function(value) {
                 console.log('THis should work');
-                window.location.replace('/aboutMe');
+                window.location.replace('/about');
             });
         console.log('SOmethign happened');
     };
