@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 export default class Login extends Component {
   constructor(props) {
     super(props)
     this.state = {
       email : '',
       password: ''
-    };
+    }
   }
   handleInputChange = (event) => {
-    const { value, name } = event.target;
+    const { value, name } = event.target
     this.setState({
       [name]: value
-    });
+    })
   }
   onSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     fetch('http://localhost:5000/api/authenticate', {
       method: 'POST',
       body: JSON.stringify(this.state),
@@ -24,16 +24,16 @@ export default class Login extends Component {
     })
     .then(res => {
       if (res.status === 200) {
-        this.props.history.push('/');
+        this.props.history.push('/')
       } else {
-        const error = new Error(res.error);
-        throw error;
+        const error = new Error(res.error)
+        throw error
       }
     })
     .catch(err => {
-      console.error(err);
-      alert('Error logging in please try again');
-    });
+      console.error(err)
+      alert('Error logging in please try again')
+    })
   }
   render() {
     return (
@@ -57,6 +57,6 @@ export default class Login extends Component {
         />
        <input type="submit" value="Submit"/>
       </form>
-    );
+    )
   }
 }
