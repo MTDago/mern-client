@@ -1,48 +1,62 @@
-import React from 'react';
-import Title from '../components/layout/Title';
-
-export default class LoginForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: '',
-            password: ''
-        };
+import React, { Component } from 'react'
+export default class Login extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      email : '',
+      password: ''
     }
-
-    render() {
-        const { email, password } = this.state;
-        return (
-            <form onSubmit={this.handleSubmit}>
-                <label htmlFor="email">Email</label>
-                <input
-                    name="email"
-                    type="text"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={this.handleChange}
-                />
-                <label htmlFor="email">Password</label>
-                <input
-                    name="password"
-                    type="password"
-                    placeholder="Enter your password"
-                    value={password}
-                    onChange={this.handleChange}
-                />
-                <button type="submit">Login</button>
-            </form>
-        );
-    }
-
-    handleChange = event => {
-        this.setState({
-            [event.target.name]: event.target.value
-        });
-    };
-
-    handleSubmit = event => {
-        console.log('Submitting');
-        console.log(this.state);
-    };
+  }
+  handleInputChange = (event) => {
+    const { value, name } = event.target
+    this.setState({
+      [name]: value
+    })
+  }
+  onSubmit = (event) => {
+    event.preventDefault()
+    fetch('http://localhost:5000/api/authenticate', {
+      method: 'POST',
+      body: JSON.stringify(this.state),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(res => {
+      if (res.status === 200) {
+        this.props.history.push('/')
+      } else {
+        const error = new Error(res.error)
+        throw error
+      }
+    })
+    .catch(err => {
+      console.error(err)
+      alert('Error logging in please try again')
+    })
+  }
+  render() {
+    return (
+      <form onSubmit={this.onSubmit}>
+        <h1>Login Below!</h1>
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter email"
+          value={this.state.email}
+          onChange={this.handleInputChange}
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Enter password"
+          value={this.state.password}
+          onChange={this.handleInputChange}
+          required
+        />
+       <input type="submit" value="Submit"/>
+      </form>
+    )
+  }
 }
