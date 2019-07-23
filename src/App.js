@@ -1,7 +1,6 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import './App.sass'
-import Login from './pages/LoginForm'
 
 // Layout and Pages
 import Navbar from './components/layout/Navbar'
@@ -9,8 +8,11 @@ import AboutMe from './pages/AboutMe'
 import Books from './pages/Books'
 import Blog from './pages/Blog'
 import Newsletter from './pages/Newsletter'
+import Login from './pages/LoginForm'
+import withAuth from './pages/withAuth'
 // import LoginForm from './components/pages/LoginForm'
 import ValidatedLoginForm from './pages/ValidateLoginForm'
+import Secret from './components/secret'
 
 // Book
 import SingleBook from './components/book/SingleBook'
@@ -48,6 +50,7 @@ function App() {
             <Route exact path="/books/:id/show" component={stripeButton} />
             <Route exact path="/books/add" component={ImageUpload} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/secret" component={withAuth(Secret)} />
         </>
     )
 }
