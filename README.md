@@ -37,14 +37,16 @@ Front-End:
 * React
 * HTML
 * CSS
+* Netlify
 
 Back-End:
 * Express
 * Node
 * Mongoose
+* Heroku 
 
 Database:
-* MongoDb
+* MongoDB
 
 # Instructions on how to setup, configure, deploy and use your :
 
@@ -85,6 +87,18 @@ US 6: As the client I can create a book
 US 7: As the client I can upload images
 
 US 8: As the client I can write a blog
+
+US 9: As a client I can login to the admin account
+
+US 10: As a client I can organize the books i'm selling by series
+
+US 11: As a client I can edit my books
+
+US 12: As a client I can delete my books
+
+US 13: As a client I can edit my blog posts
+
+US 14: As a client I can delete blog posts
 
 # A workflow diagram of the user journey/s.:
 
@@ -131,7 +145,7 @@ The method we used was local version control where individuals could work from t
 * Security - security is one of the more important aspects because having vulnerabilities in your software creates the risk of having sensitive information exposed and/or opens the path for ransomware attacks.
 * Easily maintainable or modifiable - Having a maintainable application helps when constantly changing the code which goes hand in hand with readable and testable code and creates a better quality software.
 * Readable - Having readable code is really helpful for not only others working on the same application but also for yourself for when revisiting your code in the future. Having heavily commented code is the best way to have an easily readable application.
-* Testable - While writing tests may take a fair amount of time and can seem unnecessary, having a testable application is important as it prevents any bugs in your code and can take longer to find the issues then having to write the tests.
+* Testable - While writing tests may take a fair amount of time and can seem unnecessary however having a testable application is important as it prevents any bugs in your code and can take longer to find the issues then having to write the tests.
 * Usability - Having an easy to use application is important as it’s what attracts users to use the software. If the application is slow and hard to navigate then the user will be discouraged from using it.
 * Functional - Having a functional application is what measures its quality. If the software does what it's intended to do and covers all the other aspects mentioned then it will be a good quality application.
 
@@ -140,14 +154,16 @@ The method we used was local version control where individuals could work from t
 
 * Bulma - Used for styling the application
 * Express - Used for the back-end to create the routes that the client uses to request data.
-* Mongoose - Used to handle creating the model schemas and for MongoDB.
+* Mongoose, MongoDB - Used to handle creating the model schemas and for MongoDB.
 * Node - Used to install packages.
 * React - Used as the front-end of the application.
 * React-Dom - Used to render components.
 * React-Router-Dom - Used to route to components.
-* Axios - Used to send request to server.
-* Jest - Used to test all the components of the application.
-* Redux - Used to handle state
+* Axios - Used to communicate between frontend and server via requests.
+* Mocha, Chai - Used to test the server/backend components of the application.
+* Bcrypt, Passport - Authentication and Authorization
+* Cloudinary - Image storage and Uploading
+
 
 ## A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
 The team should have a competent knowledge in Javascript fundamentals and be able to build a MERN framework. Basic knowledge of HTML and CSS and routing is also beneficial however not required by the whole team.  Communication and working collectively in a team environment is also highly required.
