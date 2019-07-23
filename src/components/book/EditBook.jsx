@@ -54,7 +54,7 @@ export default class NewBook extends Component {
         event.preventDefault();
         axios.delete(bookAPI + '/' + this.state.id).then(function(value) {
             console.log('THis should work');
-            window.location.reload();
+            window.location.replace('/about');
         });
     };
 

@@ -40,7 +40,11 @@ export default class SingleBook extends Component {
                 <a href={'/books/' + this.state.id + '/edit'}>
                     <button className="button is-rounded">Edit</button>
                 </a>
-                <StripeButton />
+                <StripeButton
+                    name={this.state.title}
+                    description={this.state.blurb}
+                    amount={this.state.cost}
+                />
             </div>
         );
     }

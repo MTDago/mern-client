@@ -6,26 +6,37 @@ import axios from 'axios';
 import ImageUpload from './ImageUpload';
 
 export default class NewBook extends Component {
-    state = {
-        title: '',
-        cost: '',
-        blurb: '',
-        published: '',
-        series: '',
-        image: null,
-        redirect: false
-    };
+    constructor(props) {
+        super(props);
+        this.getImage = this.getImage.bind(this);
+        this.state = {
+            title: '',
+            cost: '',
+            blurb: '',
+            published: '',
+            series: '',
+            image: 'no image'
+        };
+    }
+
+    getImage(image) {
+        console.log('getImage was invoked');
+        this.setState({
+            image: image.url
+        });
+    }
 
     handleSubmit = event => {
         event.preventDefault();
-        const { title, cost, blurb, published, series } = this.state;
+        const { title, cost, blurb, published, series, image } = this.state;
         axios
             .post(bookAPI, {
                 title: title,
                 cost: cost,
                 blurb: blurb,
                 published: published,
-                series: series
+                series: series,
+                imageURL: image
             })
             .then(function(value) {
                 console.log('THis should work');
@@ -76,7 +87,7 @@ export default class NewBook extends Component {
                         >
                             Add an Image:
                         </label>
-                        <ImageUpload />
+                        <ImageUpload onImageUpload={this.getImage} />
                         <br />
                         {/* COST*/}
                         <label
