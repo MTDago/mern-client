@@ -49,7 +49,7 @@ function App() {
             {/* Blog */}
             <Route exact path="/blog/add" component={NewBlog} />
             <Route exact path="/blog/:id/show" component={SingleBlog} />
-            <Route exact path="/blog/:id/edit" component={EditBlog} />>
+            <Route exact path="/blog/:id/edit" component={EditBlog} />
             {/* Login 2 */}
             <Route exact path="/login" component={Login} />
             <Route exact path="/secret" component={withAuth(Secret)} />

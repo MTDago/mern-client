@@ -28,11 +28,14 @@ class ImageUpload extends Component {
             },
             (error, result) => {
                 if (!error && result && result.event === 'success') {
+                    const image = result.info;
                     console.log('Done! Here is the image info: ', result.info);
+                    this.props.onImageUpload(image);
                 }
             }
         );
     }
+
     showWidget = () => {
         this.widget.open();
     };
