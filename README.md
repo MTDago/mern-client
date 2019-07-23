@@ -184,8 +184,29 @@ The whole team could improve on the following;
 This is understandable as we have only been learning javascript for a few short weeks. Having to research most things as a lot of the features in our application were not covered in class. We will all improve with time. 
 The team worked well on communication and time management. We were able to work well as a team, and finish all assigned tasks before the deadline.
 
-## Client Signoff
+## Client Communication
 
+# Signoff
 [Client Signoff (1).pdf](https://github.com/michaeltwitt/mern-client/files/3420127/Client.Signoff.1.pdf)
+
+# Minutes
+
+10/7
+* Discussed initial specs/desires for the project:
+	- Homepage/ Splash Page
+		- Navbar
+		- Blurb
+		- What’s on my desk
+	- About Page
+	- “What’s on my desk”/Blog
+	- Ability to group books (Self-Help, Sci-fi, IELTS)
+	- Link books to bookstores/kindle as well as purchasing directly
+	- Mailing List/Contact
+
+* Showed prototyping
+* Discussed ideas for CSS/Styling of website
+* Muted/Grayscale, Sans-serif font
+ 
+
 
 
