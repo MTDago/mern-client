@@ -165,6 +165,7 @@ The method we used was local version control where individuals could work from t
 * Mocha, Chai - Used to test the server/backend components of the application.
 * Bcrypt, Passport - Authentication and Authorization
 * Cloudinary - Image storage and Uploading
+* Stripe - Used to handle payments
 
 
 ## A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
