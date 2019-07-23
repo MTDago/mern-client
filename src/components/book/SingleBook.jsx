@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { bookAPI } from '../../API/init';
 import '../../App.sass';
+import StripeButton from '../stripe/StripeButton';
 
 export default class SingleBook extends Component {
     constructor(props) {
@@ -39,6 +40,7 @@ export default class SingleBook extends Component {
                 <a href={'/books/' + this.state.id + '/edit'}>
                     <button className="button is-rounded">Edit</button>
                 </a>
+                <StripeButton />
             </div>
         );
     }

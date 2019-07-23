@@ -23,8 +23,8 @@ class ImageUpload extends Component {
         // Defined as local variable
         this.widget = window.cloudinary.createUploadWidget(
             {
-                cloudName: 'dfl9d6nrt',
-                uploadPreset: 'my_preset'
+                cloudName: 'yeetus',
+                uploadPreset: 'unsigned_yeets'
             },
             (error, result) => {
                 if (!error && result && result.event === 'success') {
