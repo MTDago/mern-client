@@ -184,5 +184,7 @@ The whole team could improve on the following;
 This is understandable as we have only been learning javascript for a few short weeks. Having to research most things as a lot of the features in our application were not covered in class. We will all improve with time. 
 The team worked well on communication and time management. We were able to work well as a team, and finish all assigned tasks before the deadline.
 
+## Client Signoff
+
 
 
