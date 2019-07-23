@@ -166,9 +166,12 @@ The method we used was local version control where individuals could work from t
 
 
 ## A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
+
 The team should have a competent knowledge in Javascript fundamentals and be able to build a MERN framework. Basic knowledge of HTML and CSS and routing is also beneficial however not required by the whole team.  Communication and working collectively in a team environment is also highly required.
 
 ## Within your own project what knowledge or skills were required to complete your project, and overcome challenges?
+
+The most obvious knowledge and skills needed for a MERN assessment,  is a general understanding of it. This was the biggest challenge as we are all so new to it. The team also needed a great sense of source control and to follow the trello boards to set and assign specific tasks. Mostly the application was made up 
 
 ## Evaluate how effective your knowledge and skills were this project, using examples, and suggest changes or improvements for future projects of a similar nature?
 
