@@ -5,10 +5,13 @@ import '../App.sass';
 import { bookAPI } from '../API/init';
 
 export default class Book extends Component {
+    // current state of property objects which will be updated when this.state is used. In this case , an empty books array.
     state = {
         books: []
     };
 
+    //When the Book output is inserted in the DOM, React calls the componentDidMount() lifecycle method. 
+    //Inside, it calls the bookAPI which calls a GET request with Axios.
     componentDidMount = () => {
         axios.get(bookAPI).then(result => {
             this.setState({
@@ -16,6 +19,9 @@ export default class Book extends Component {
             });
         });
     };
+
+    //Transforms the components into DOM node that the 
+    // browser can understand and display to the screen.
     render() {
         return (
             <section className="container is-fluid column is-mobile is-centered is-half">

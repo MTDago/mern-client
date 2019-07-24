@@ -5,6 +5,7 @@ import { mailingListAPI } from '../API/init';
 import axios from 'axios';
 
 export default class Newsletter extends Component {
+     // current state of property objects
     constructor(props) {
         super(props);
         this.state = {
@@ -14,12 +15,14 @@ export default class Newsletter extends Component {
         };
     }
 
+    // Updates based on user form input change.
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
         });
     };
 
+    // Updates based on user submitting form. Inside, it calls the mailingListAPI which calls a POST request with Axios.
     handleSubmit = event => {
         event.preventDefault();
         const { firstName, lastName, email } = this.state;
@@ -30,6 +33,8 @@ export default class Newsletter extends Component {
         });
     };
 
+    //Transforms the components into DOM node that the 
+    // browser can understand and display to the screen.
     render() {
         const { firstName, lastName, email } = this.state;
         return (

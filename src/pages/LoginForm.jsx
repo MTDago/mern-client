@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+
 export default class Login extends Component {
+  // current state of property objects
   constructor(props) {
     super(props)
     this.state = {
@@ -7,12 +9,16 @@ export default class Login extends Component {
       password: ''
     }
   }
+
+  // Updates based on user form input change.
   handleInputChange = (event) => {
     const { value, name } = event.target
     this.setState({
       [name]: value
     })
   }
+
+  // Updates based on user submitting form. Inside, it calls the API which calls a POST request with Axios and catches any errors.
   onSubmit = (event) => {
     event.preventDefault()
     fetch('http://localhost:5000/api/authenticate', {
@@ -35,6 +41,9 @@ export default class Login extends Component {
       alert('Error logging in please try again')
     })
   }
+
+  //Transforms the components into DOM node that the 
+  // browser can understand and display to the screen.
   render() {
     return (
       <form onSubmit={this.onSubmit}>
