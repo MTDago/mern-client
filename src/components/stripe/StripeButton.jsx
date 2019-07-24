@@ -27,7 +27,7 @@ const stripeButton = () => {
     return (
         <StripeCheckout
             className="button is-rounded"
-            label="Buy Now with Stripe"
+            label="Buy Now"
             // name={this.props.title}
             // description={this.props.blurb}
             // amount={this.props.cost}
