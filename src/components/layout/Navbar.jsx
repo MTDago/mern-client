@@ -18,7 +18,7 @@ export default class Navbar extends Component {
             <nav className="navbar is-dark is-fluid navbar-menu is-active">
                 <div className="navbar-brand navbar-item">
                     <Link to="/about">
-                        <h2 className="navbar-item">Jo Brimblecombe</h2>
+                        <h2 className=" title is-3 navbar-item">Jo Brimblecombe</h2>
                     </Link>
                 </div>
                 <section className=" navbar-end ">

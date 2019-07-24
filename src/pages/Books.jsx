@@ -41,7 +41,7 @@ export default class Book extends Component {
                                     </div>
                                 </div>
                                 <a href={'/books/' + object._id + '/show'}>
-                                    <h2 className="heading">{object.title}</h2>
+                                    <h2 className="title is-4">{object.title}</h2>
                                 </a>
                                 <p>{object.blurb}</p>
                             </div>
