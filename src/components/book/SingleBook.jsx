@@ -60,7 +60,9 @@ export default class SingleBook extends Component {
                 <div className="column is-half">
                     <br />
                     <h1 className="title is-2">{this.state.title}</h1>
-                    About the Book:
+                    <h2 className="title is-4">${this.state.cost}</h2>
+                    <p>Date Published: {this.state.published}</p>
+                    About the Book:                    
                     <article className="section">{this.state.blurb}</article>
                     <a href={'/books/' + this.state.id + '/edit'}>
                         <button className="button is-rounded">Edit</button>
