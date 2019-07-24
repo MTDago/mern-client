@@ -15,7 +15,7 @@ export default class Navbar extends Component {
     // browser can understand and display to the screen. Navbar is displayed on every page and links to all other pages.
     render() {
         return (
-            <nav className="navbar is-dark is-fluid navbar-menu is-active">
+            <nav className="navbar is-fixed-top is-dark is-fluid navbar-menu is-active">
                 <div className="navbar-brand navbar-item">
                     <Link to="/about">
                         <h2 className=" title is-3 navbar-item has-text-light">
