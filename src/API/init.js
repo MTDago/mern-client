@@ -6,4 +6,6 @@ const mailingListAPI =
 
 const bookAPI = 'https://mern-server-deployment.herokuapp.com/books';
 
-export { blogAPI, mailingListAPI, bookAPI };
+const deskAPI = 'https://mern-server-deployment.herokuapp.com/desk';
+
+export { blogAPI, mailingListAPI, bookAPI, deskAPI };
