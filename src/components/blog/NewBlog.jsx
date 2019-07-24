@@ -70,7 +70,7 @@ export default class NewBook extends Component {
         });
     };
 
-    //Render transforms the components into DOM node that the 
+    //Render transforms the components into DOM node that the
     // browser can understand and display to the screen.
     render() {
         const { title, content } = this.state;
@@ -155,7 +155,7 @@ export default class NewBook extends Component {
                                 className="button is-danger is-outlined"
                                 onClick={() => this.deleteTag(index)}
                             >
-                                <span>{'x' + tag}</span>
+                                <span>{tag + '  X'}</span>
                                 <span className="icon is-small">
                                     <i className="fas fa-times" />
                                 </span>
