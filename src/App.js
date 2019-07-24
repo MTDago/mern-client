@@ -10,7 +10,7 @@ import Blog from './pages/Blog';
 import Newsletter from './pages/Newsletter';
 import Login from './pages/LoginForm';
 import withAuth from './pages/withAuth';
-
+import EditDesk from './components/layout/EditDesk';
 // Auth
 // import LoginForm from './components/pages/LoginForm'
 // import ValidatedLoginForm from './pages/ValidateLoginForm';
@@ -36,6 +36,7 @@ function App() {
             {/* Pages */}
             <Route exact path="/" component={AboutMe} />
             <Route exact path="/about" component={AboutMe} />
+            <Route exact path="/desk/edit" component={EditDesk} />
             <Route exact path="/books/" component={Books} />
             <Route exact path="/blog" component={Blog} />
             <Route exact path="/newsletter" component={Newsletter} />
@@ -45,7 +46,11 @@ function App() {
             {/* Books */}
             <Route exact path="/books/add" component={withAuth(NewBook)} />
             <Route exact path="/books/:id/show" component={SingleBook} />
-            <Route exact path="/books/:id/edit" component={withAuth(EditBook)} />
+            <Route
+                exact
+                path="/books/:id/edit"
+                component={withAuth(EditBook)}
+            />
             {/* Blog */}
             <Route exact path="/blog/add" component={withAuth(NewBlog)} />
             <Route exact path="/blog/:id/show" component={SingleBlog} />

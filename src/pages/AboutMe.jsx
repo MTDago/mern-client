@@ -2,14 +2,33 @@ import React, { Component } from 'react';
 import Title from '../components/layout/Title';
 import '../App.sass';
 import axios from 'axios';
-import { blogAPI } from '../API/init';
+import { blogAPI, deskAPI } from '../API/init';
 import MyDesk from '../components/layout/MyDesk';
 
 export default class AboutMe extends Component {
     // current state of property objects which will be updated when this.state is used
     state = {
         blogTitle: '',
-        blogContent: ''
+        blogContent: '',
+        reading: '',
+        writing: '',
+        WIP: '',
+        links: []
+    };
+
+    UNSAFE_componentWillMount = () => {
+        axios.get(deskAPI).then(result => {
+            console.log('====================================');
+            console.log(result);
+            console.log('====================================');
+            let { reading, writing, WIP, links } = result.data[0];
+            this.setState({
+                reading: reading,
+                writing: writing,
+                WIP: WIP,
+                links: links
+            });
+        });
     };
 
     //When the AboutMe output is inserted in the DOM, React calls the componentDidMount() lifecycle method.
@@ -70,7 +89,12 @@ export default class AboutMe extends Component {
                     <br />
                     <br />
                     <Title title="What's on my Desk?" />
-                    <MyDesk />
+                    <MyDesk
+                        reading={this.state.reading}
+                        writing={this.state.writing}
+                        WIP={this.state.WIP}
+                        links={this.state.links}
+                    />
 
                     {/* <p className="title is-5">{this.state.blogTitle}</p>
                     <p className="section has-text-left subtitle is-6">
