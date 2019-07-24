@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+
 export default function withAuth(ComponentToProtect) {
   return class extends Component {
     constructor() {
@@ -9,6 +10,8 @@ export default function withAuth(ComponentToProtect) {
         redirect: false,
       };
     }
+
+    //When the output is inserted in the DOM, React calls the componentDidMount() lifecycle method.     
     componentDidMount() {
       fetch('/checkToken')
         .then(res => {
@@ -24,6 +27,9 @@ export default function withAuth(ComponentToProtect) {
           this.setState({ loading: false, redirect: true });
         });
     }
+
+    //Transforms the components into DOM node that the 
+    // browser can understand and display to the screen.
     render() {
       const { loading, redirect } = this.state;
       if (loading) {

@@ -5,11 +5,14 @@ import axios from 'axios';
 import { blogAPI } from '../API/init';
 
 export default class AboutMe extends Component {
+    // current state of property objects which will be updated when this.state is used 
     state = {
         blogTitle: '',
         blogContent: ''
     };
 
+    //When the AboutMe output is inserted in the DOM, React calls the componentDidMount() lifecycle method. 
+    //Inside, it calls the blogAPI which calls a GET request with Axios.
     componentDidMount = () => {
         axios.get(blogAPI).then(result => {
             const allBlogs = [...result.data];
@@ -25,6 +28,8 @@ export default class AboutMe extends Component {
         });
     };
 
+    //Render transforms the components into DOM node that the 
+    // browser can understand and display to the screen.
     render() {
         return (
             <div className="container is-fluid columns is-mobile is-multiline">
