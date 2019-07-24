@@ -13,20 +13,29 @@ export default class SingleBook extends Component {
             blurb: '',
             cost: '',
             published: '',
-            series: ''
+            series: '',
+            imageURL: ''
         };
     }
 
     componentDidMount = () => {
         // Refactor the axios to use bookAPI + this.state.id
         axios.get(bookAPI + '/' + this.state.id).then(result => {
-            let { title, blurb, cost, published, series } = result.data;
+            let {
+                title,
+                blurb,
+                cost,
+                published,
+                series,
+                imageURL
+            } = result.data;
             this.setState({
                 title: title,
                 blurb: blurb,
                 cost: cost,
                 published: published,
-                series: series
+                series: series,
+                imageURL
             });
         });
     };
@@ -34,6 +43,12 @@ export default class SingleBook extends Component {
     render() {
         return (
             <div className="container is-fluid column is-mobile is-centered">
+                <img
+                    src={this.state.imageURL}
+                    alt={this.state.title + ' Cover Image'}
+                    height="283"
+                    width="200"
+                />
                 <h1 className="title is-2">{this.state.title}</h1>
                 About the Book:
                 <article className="section">{this.state.blurb}</article>

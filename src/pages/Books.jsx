@@ -24,6 +24,16 @@ export default class Book extends Component {
                     {this.state.books.map(object => {
                         return (
                             <div key={object._id} className="tile is-child box">
+                                <div className="columns is-one-quarter equal-height">
+                                    <div className="card-content is-flex is-horizontal-center">
+                                        <img
+                                            src={object.imageURL}
+                                            alt={object.title + ' Cover Photo'}
+                                            height="455"
+                                            width="249"
+                                        />
+                                    </div>
+                                </div>
                                 <a href={'/books/' + object._id + '/show'}>
                                     <h2 className="heading">{object.title}</h2>
                                 </a>
