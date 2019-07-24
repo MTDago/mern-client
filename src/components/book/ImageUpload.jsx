@@ -49,6 +49,7 @@ class ImageUpload extends Component {
         return (
             <div className="columns is-mobile is-centered">
                 <button
+                    id="UploadButton"
                     className="button is-rounded is-centered"
                     onClick={this.showWidget}
                 >
