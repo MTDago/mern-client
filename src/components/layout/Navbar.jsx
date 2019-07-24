@@ -11,6 +11,8 @@ export default class Navbar extends Component {
         this.setState({ isOpen: !this.state.isOpen });
     };
 
+     //Render transforms the components into DOM node that the 
+    // browser can understand and display to the screen. Navbar is displayed on every page and links to all other pages.
     render() {
         return (
             <nav className="container is-fluid navbar-menu is-active is-dark">
