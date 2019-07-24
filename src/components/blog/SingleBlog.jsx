@@ -44,9 +44,12 @@ export default class SingleBook extends Component {
             <div className="container is-fluid column is-mobile is-centered">
                 <h1 className="title is-2">{this.state.title}</h1>
                 <article className="section">{this.state.content}</article>
-                <a href={'/blog/' + this.state.id + '/edit'}>
+                {/* <a href={'/blog/' + this.state.id + '/edit'}>
                     <button className="button is-rounded">Edit</button>
-                </a>
+                </a> */}
+                <a href={'/blog'}>
+                        <button className="button is-rounded">Back</button>
+                    </a>
             </div>
         );
     }
