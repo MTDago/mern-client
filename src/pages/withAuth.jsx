@@ -15,16 +15,15 @@ export default function withAuth(ComponentToProtect) {
     componentDidMount() {
       fetch('http://localhost:5000/checkToken', {
         method: 'POST',
-        body: JSON.stringify({ token: localStorage.getItem('token') }),
+        body: JSON.stringify({ token: localStorage.getItem('token') }), // The AUTHORISATION relies on token to be transferred across pages. This parses the TOKEN through the body of the browser to be read elsewhere. This is an alternative to using cookies.
         headers: {
           'Content-Type': 'application/json'
         }
       })
-        .then(res => res.text())
+        .then(res => res.text()) // The expected response is a 200 or 'OK', it is not json,  it is just raw text and res.json() is not needed in order to parse it through the rest of the code
         .then(res => {
-          console.log(res)
           if (res === 'OK') {
-            this.setState({ loading: false });
+            this.setState({ loading: false }); // If the res is 200, we change the LOADING value to false and allow the page to be rendered
           } else {
             const error = new Error(res.error);
             throw error;
@@ -32,7 +31,7 @@ export default function withAuth(ComponentToProtect) {
         })
         .catch(err => {
           console.error(err);
-          this.setState({ loading: false, redirect: true });
+          this.setState({ loading: false, redirect: true }); // If the user is not authorised, they are redirected to the login page by setting the REDIRECT value to true
         });
     }
 
@@ -43,8 +42,8 @@ export default function withAuth(ComponentToProtect) {
       if (loading) {
         return null;
       }
-      if (redirect) {
-        return <Redirect to="/login" />;
+      if (redirect) { // If the user is not authorised to access the requested page
+        return <Redirect to="/login" />; // The login page will be displayed
       }
       return (
         <>
