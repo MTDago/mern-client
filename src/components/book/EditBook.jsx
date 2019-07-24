@@ -19,11 +19,7 @@ export default class NewBook extends Component {
             series: '',
             image: ''
         };
-    }
 
-    // Fill the state with the Blog from the Server. Inside, it calls the bookAPI which calls a Get request with Axios.
-    UNSAFE_componentWillMount = () => {
-        // Refactor the axios to use bookAPI + this.state.id
         axios.get(bookAPI + '/' + this.state.id).then(result => {
             let { title, blurb, cost, published, series, image } = result.data;
             this.setState({
@@ -35,7 +31,7 @@ export default class NewBook extends Component {
                 imageURL: image
             });
         });
-    };
+    }
 
     // Updates when user uploads an image
     getImage(image) {
