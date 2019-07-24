@@ -16,7 +16,8 @@ export default class NewBook extends Component {
             blurb: '',
             published: '',
             series: '',
-            image: 'no image'
+            image:
+                'http://res.cloudinary.com/yeetus/image/upload/v1563976098/placeholder-image_rsiizf.png'
         };
     }
 

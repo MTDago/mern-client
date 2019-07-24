@@ -1,3 +1,5 @@
+// I was going to use this structure and refactor away from ./init.js but it'd take too long to do within the time frame and init.js works fine anyway.
+
 import axios from 'axios';
 
 const DEV_URL = 'http://localhost:5000';
