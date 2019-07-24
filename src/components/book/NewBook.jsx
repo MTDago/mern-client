@@ -19,10 +19,9 @@ export default class NewBook extends Component {
             image: 'no image'
         };
     }
-    
+
     // Updates when user uploads an image
     getImage(image) {
-        console.log('getImage was invoked');
         this.setState({
             image: image.url
         });
@@ -30,7 +29,7 @@ export default class NewBook extends Component {
         uploadButton.innerHTML = 'Image Uploaded';
     }
 
-    // Updates based on user submitting form. Inside, it calls the bookAPI which calls a POST request with Axios.     
+    // Updates based on user submitting form. Inside, it calls the bookAPI which calls a POST request with Axios.
     handleSubmit = event => {
         // prevents page refresh
         event.preventDefault();
@@ -56,7 +55,7 @@ export default class NewBook extends Component {
         });
     };
 
-    //Render transforms the components into DOM node that the 
+    //Render transforms the components into DOM node that the
     // browser can understand and display to the screen.
     render() {
         const { title, cost, blurb, published, series } = this.state;
@@ -94,7 +93,6 @@ export default class NewBook extends Component {
                         >
                             Add an Image:
                         </label>
-                        {this.showImage}
                         <ImageUpload onImageUpload={this.getImage} />
                         <br />
                         {/* COST*/}

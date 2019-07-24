@@ -83,16 +83,20 @@ export default class NewBook extends Component {
         });
     };
 
-    // Delete Blog
     deleteBlog = event => {
+        // Prevent page refresh
         event.preventDefault();
-        axios.delete(blogAPI + '/' + this.state.id).then(function(value) {
-            console.log('THis should work');
-            window.location.replace('/about');
-        });
+        const response = window.confirm(
+            'Are you sure you want to delete this book?'
+        );
+        if (response === true) {
+            axios.delete(blogAPI + '/' + this.state.id).then(function(value) {
+                window.location.replace('/about');
+            });
+        }
     };
 
-    // Render transforms the components into DOM node that the 
+    // Render transforms the components into DOM node that the
     // browser can understand and display to the screen.
     render() {
         const { title, content } = this.state;
@@ -195,12 +199,14 @@ export default class NewBook extends Component {
                         </button>
                     </div>
                 </form>
-                <button
-                    className="button is-rounded is-danger is-centred"
-                    onClick={this.deleteBlog}
-                >
-                    Delete Blog Post
-                </button>
+                <div className="columns is-mobile is-centered">
+                    <button
+                        className="button is-rounded is-danger"
+                        onClick={this.deleteBlog}
+                    >
+                        Delete Blog Post
+                    </button>
+                </div>
             </div>
         );
     }
