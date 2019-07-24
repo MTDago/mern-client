@@ -9,7 +9,7 @@ export default class Blog extends Component {
         blogs: []
     };
 
-    //When the Blog output is inserted in the DOM, React calls the componentDidMount() lifecycle method. 
+    //When the Blog output is inserted in the DOM, React calls the componentDidMount() lifecycle method.
     //Inside, it calls the blogAPI which calls a GET request with Axios.
     componentDidMount = () => {
         axios.get(blogAPI).then(result => {
@@ -20,35 +20,47 @@ export default class Blog extends Component {
         });
     };
 
-    //Render transforms the components into DOM node that the 
+    //Render transforms the components into DOM node that the
     // browser can understand and display to the screen.
     render() {
         return (
             <section className="container is-fluid column is-mobile is-centered">
                 <Title title="My Blog" />
+                <br />
                 <div>
-                    {this.state.blogs.map(object => {
+                    {this.state.blogs.reverse().map(object => {
                         return (
-                            <div
-                                key={object._id}
-                                className="tile is-parent box"
-                            >
-                                <a href={'/blog/' + object._id + '/show'}>
-                                    <h2 className="heading">{object.title}</h2>
-                                </a>
+                            <div key={object._id} className=" is-parent box">
+                                <div className=" is-child ">
+                                    <a href={'/blog/' + object._id + '/show'}>
+                                        <h2 className="title is-3">
+                                            {object.title}
+                                        </h2>
+                                    </a>
+                                    <p className="is-pulled-right">
+                                        Published on
+                                        {' ' +
+                                            new Date(
+                                                object.date
+                                            ).toDateString()}
+                                    </p>
+                                </div>
                                 <article className="section">
                                     {object.content}
                                 </article>
-                                {object.tags.map(tag => {
-                                    return (
-                                        <button
-                                            key={object.tags.indexOf(tag)}
-                                            className="button is-small is-rounded has-text-centered "
-                                        >
-                                            {tag}
-                                        </button>
-                                    );
-                                })}
+                                <br />
+                                <div>
+                                    {object.tags.map(tag => {
+                                        return (
+                                            <button
+                                                key={object.tags.indexOf(tag)}
+                                                className="tag is-medium is-rounded has-text-centered "
+                                            >
+                                                {tag}
+                                            </button>
+                                        );
+                                    })}
+                                </div>
                             </div>
                         );
                     })}
