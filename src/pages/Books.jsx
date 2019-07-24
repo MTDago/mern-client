@@ -24,12 +24,12 @@ export default class Book extends Component {
     // browser can understand and display to the screen.
     render() {
         return (
-            <section className="container is-fluid column is-mobile is-centered is-half">
+            <section className="container is-fluid is-mobile">
                 <Title title="My Books" />
-                <div className="tile is-vertical is-8 is-parent">
+                <div className="card has-equal-height columns is-multiline">
                     {this.state.books.map(object => {
                         return (
-                            <div key={object._id} className="tile is-child box">
+                            <div key={object._id} className="card has-equal-height column is-half">
                                 <div className="columns is-one-quarter equal-height">
                                     <div className="card-content is-flex is-horizontal-center">
                                         <img
