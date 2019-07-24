@@ -4,7 +4,7 @@ import axios from 'axios';
 import '../../App.sass';
 import { paymentAPI } from '../../API/init';
 
-const stripeButton = () => {
+const stripeButton = ({ name, description, amount }) => {
     const publishableKey = 'pk_test_Ilh9uzxnptCE3QRvTMqeF6zM00Rp98Il5Q';
 
     const onToken = token => {
@@ -21,23 +21,23 @@ const stripeButton = () => {
             })
             .catch(error => {
                 console.log('Payment Error: ', error);
-                alert('Payment Error');
+                alert('Payment Error you absolute donut');
             });
     };
 
     return (
         <StripeCheckout
             className="button is-rounded"
-            label="Buy Now with Stripe"
-            name={this.props.title}
-            description={this.props.blurb}
-            amount={this.props.cost}
+            label="Buy Now"
+            name={name}
+            description={description}
+            amount={amount * 100}
             token={onToken}
             stripeKey={publishableKey}
             billingAddress={false}
         >
             <button type="button" className="button is-rounded">
-                Yeet
+                Buy Now
             </button>
         </StripeCheckout>
     );
