@@ -40,7 +40,7 @@ export default class NewBook extends Component {
                 series: series
             })
             .then(function(value) {
-                window.location.replace('/about');
+                window.location.replace('/books');
             });
     };
 
@@ -52,10 +52,14 @@ export default class NewBook extends Component {
 
     deleteBook = event => {
         event.preventDefault();
-        axios.delete(bookAPI + '/' + this.state.id).then(function(value) {
-            console.log('THis should work');
-            window.location.replace('/about');
-        });
+        const response = window.confirm(
+            'Are you sure you want to delete this book?'
+        );
+        if (response === true) {
+            axios.delete(bookAPI + '/' + this.state.id).then(function(value) {
+                window.location.replace('/about');
+            });
+        }
     };
 
     render() {
@@ -139,7 +143,7 @@ export default class NewBook extends Component {
                         </label>
                         <input
                             className="input is-rounded"
-                            type="date"
+                            type="month"
                             name="published"
                             value={published}
                             onChange={this.handleChange}
@@ -173,12 +177,14 @@ export default class NewBook extends Component {
                         </button>
                     </div>
                 </form>
-                <button
-                    className="button is-rounded is-danger"
-                    onClick={this.deleteBook}
-                >
-                    Delete Book
-                </button>
+                <div className="columns is-mobile is-centered">
+                    <button
+                        className="button is-rounded is-danger"
+                        onClick={this.deleteBook}
+                    >
+                        Delete Book
+                    </button>
+                </div>
             </div>
         );
     }

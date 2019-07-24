@@ -42,24 +42,30 @@ export default class SingleBook extends Component {
 
     render() {
         return (
-            <div className="container is-fluid column is-mobile is-centered">
-                <img
-                    src={this.state.imageURL}
-                    alt={this.state.title + ' Cover Image'}
-                    height="283"
-                    width="200"
-                />
-                <h1 className="title is-2">{this.state.title}</h1>
-                About the Book:
-                <article className="section">{this.state.blurb}</article>
-                <a href={'/books/' + this.state.id + '/edit'}>
-                    <button className="button is-rounded">Edit</button>
-                </a>
-                <StripeButton
-                    name={this.state.title}
-                    description={this.state.blurb}
-                    amount={this.state.cost}
-                />
+            <div className="columns is-fluid column is-mobile is-centered">
+                <div className="column is-half">
+                    <br />
+                    <img
+                        src={this.state.imageURL}
+                        alt={this.state.title + ' Cover Image'}
+                        height="283"
+                        width="200"
+                    />
+                </div>
+                <div className="column is-half">
+                    <br />
+                    <h1 className="title is-2">{this.state.title}</h1>
+                    About the Book:
+                    <article className="section">{this.state.blurb}</article>
+                    <a href={'/books/' + this.state.id + '/edit'}>
+                        <button className="button is-rounded">Edit</button>
+                    </a>
+                    <StripeButton
+                        name={this.state.title}
+                        description={this.state.blurb}
+                        amount={this.state.cost}
+                    />
+                </div>
             </div>
         );
     }

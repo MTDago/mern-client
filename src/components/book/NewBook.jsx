@@ -24,6 +24,8 @@ export default class NewBook extends Component {
         this.setState({
             image: image.url
         });
+        let uploadButton = document.getElementById('UploadButton');
+        uploadButton.innerHTML = 'Image Uploaded';
     }
 
     handleSubmit = event => {
@@ -39,10 +41,8 @@ export default class NewBook extends Component {
                 imageURL: image
             })
             .then(function(value) {
-                console.log('THis should work');
-                window.location.replace('/about');
+                window.location.replace('/books');
             });
-        console.log('SOmethign happened');
     };
 
     handleChange = event => {
@@ -87,6 +87,7 @@ export default class NewBook extends Component {
                         >
                             Add an Image:
                         </label>
+                        {this.showImage}
                         <ImageUpload onImageUpload={this.getImage} />
                         <br />
                         {/* COST*/}
