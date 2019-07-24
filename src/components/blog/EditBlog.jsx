@@ -2,20 +2,19 @@ import React, { Component } from 'react';
 import Title from '../../components/layout/Title';
 import '../../App.sass';
 import { blogAPI } from '../../API/init';
-import axios from 'axios';
+import axios from '../../API/Client';
 
 export default class NewBook extends Component {
     // Create the state
-    state = {
-        id: this.props.match.params.id,
-        title: 'THIS SHOULD BE A BLOG',
-        content: '',
-        date: '',
-        tagArray: []
-    };
-
-    // Fill the state with the Blog from the Server. Inside, it calls the blogAPI which calls a Get request with Axios.
-    UNSAFE_componentWillMount = () => {
+    constructor(props) {
+        super(props);
+        this.state = {
+            id: this.props.match.params.id,
+            title: 'THIS SHOULD BE A BLOG',
+            content: '',
+            date: '',
+            tagArray: []
+        };
         axios.get(blogAPI + '/' + this.state.id).then(result => {
             let { title, content, date, tags } = result.data;
             this.setState({
@@ -25,7 +24,7 @@ export default class NewBook extends Component {
                 tagArray: [...tags]
             });
         });
-    };
+    }
 
     // Updates based on user submitting form. Inside, it calls the blogAPI which calls a PUT request with Axios.
     handleSubmit = event => {

@@ -8,4 +8,5 @@ const bookAPI = 'https://mern-server-deployment.herokuapp.com/books';
 
 const deskAPI = 'https://mern-server-deployment.herokuapp.com/desk';
 
-export { blogAPI, mailingListAPI, bookAPI, deskAPI };
+const paymentAPI = 'https://mern-server-deployment.herokuapp.com/payment';
+export { blogAPI, mailingListAPI, bookAPI, deskAPI, paymentAPI };
