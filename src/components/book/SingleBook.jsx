@@ -64,9 +64,9 @@ export default class SingleBook extends Component {
                     <p>Date Published: {this.state.published}</p>
                     About the Book:                    
                     <article className="section">{this.state.blurb}</article>
-                    <a href={'/books/' + this.state.id + '/edit'}>
+                    {/* <a href={'/books/' + this.state.id + '/edit'}>
                         <button className="button is-rounded">Edit</button>
-                    </a>
+                    </a> */}
                     <StripeButton
                         name={this.state.title}
                         description={this.state.blurb}
