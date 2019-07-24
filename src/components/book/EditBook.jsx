@@ -3,51 +3,68 @@ import Title from '../../components/layout/Title';
 import '../../App.sass';
 import { bookAPI } from '../../API/init';
 import axios from 'axios';
+import ImageUpload from './ImageUpload';
 
 export default class NewBook extends Component {
     // Create the state
-    state = {
-        id: this.props.match.params.id,
-        title: 'THIS SHOULD BE A BOOK',
-        cost: '',
-        blurb: '',
-        published: '',
-        series: ''
-    };
+    constructor(props) {
+        super(props);
+        this.getImage = this.getImage.bind(this);
+        this.state = {
+            id: this.props.match.params.id,
+            title: 'THIS SHOULD BE A BOOK',
+            cost: '',
+            blurb: '',
+            published: '',
+            series: '',
+            image: ''
+        };
+    }
 
     // Fill the state with the Blog from the Server. Inside, it calls the bookAPI which calls a Get request with Axios.
     UNSAFE_componentWillMount = () => {
         // Refactor the axios to use bookAPI + this.state.id
         axios.get(bookAPI + '/' + this.state.id).then(result => {
-            let { title, blurb, cost, published, series } = result.data;
+            let { title, blurb, cost, published, series, image } = result.data;
             this.setState({
                 title: title,
                 blurb: blurb,
                 cost: cost,
                 published: published,
-                series: series
+                series: series,
+                imageURL: image
             });
         });
     };
+
+    // Updates when user uploads an image
+    getImage(image) {
+        this.setState({
+            image: image.url
+        });
+        let uploadButton = document.getElementById('UploadButton');
+        uploadButton.innerHTML = 'Image Changed';
+    }
 
     // Updates based on user submitting form. Inside, it calls the bookAPI which calls a PUT request with Axios.
     handleSubmit = event => {
         // Prevent page refresh
         event.preventDefault();
-        const { title, cost, blurb, published, series } = this.state;
+        const { title, cost, blurb, published, series, image } = this.state;
         axios
             .put(bookAPI + '/' + this.state.id, {
                 title: title,
                 cost: cost,
                 blurb: blurb,
                 published: published,
-                series: series
+                series: series,
+                imageURL: image
             })
             .then(function(value) {
                 window.location.replace('/books');
             });
     };
-    
+
     // Updates based on user input change.
     handleChange = event => {
         this.setState({
@@ -69,7 +86,7 @@ export default class NewBook extends Component {
         }
     };
 
-    // Render transforms the components into DOM node that the 
+    // Render transforms the components into DOM node that the
     // browser can understand and display to the screen.
     render() {
         const { title, cost, blurb, published, series } = this.state;
@@ -101,7 +118,14 @@ export default class NewBook extends Component {
                         <br />
                         <br />
                         <br />
-
+                        <label
+                            className="label has-text-centered is-uppercase"
+                            htmlFor="image"
+                        >
+                            Change Cover Image:
+                        </label>
+                        <ImageUpload onImageUpload={this.getImage} />
+                        <br />
                         {/* COST*/}
                         <label
                             className="label has-text-centered is-uppercase"
