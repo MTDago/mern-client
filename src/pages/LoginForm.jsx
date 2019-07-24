@@ -22,13 +22,17 @@ export default class Login extends Component {
         'Content-Type': 'application/json'
       }
     })
+      .then(res => {
+        if (res.status === 200) {
+          return res.json()
+        } else {
+          const error = new Error(res.error)
+          throw error
+        }
+      })
     .then(res => {
-      if (res.status === 200) {
+        localStorage.setItem('token', res.token)
         this.props.history.push('/')
-      } else {
-        const error = new Error(res.error)
-        throw error
-      }
     })
     .catch(err => {
       console.error(err)

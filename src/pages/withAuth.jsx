@@ -10,9 +10,17 @@ export default function withAuth(ComponentToProtect) {
       };
     }
     componentDidMount() {
-      fetch('/checkToken')
+      fetch('http://localhost:5000/checkToken', {
+        method: 'POST',
+        body: JSON.stringify({ token: localStorage.getItem('token') }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then(res => res.text())
         .then(res => {
-          if (res.status === 200) {
+          console.log(res)
+          if (res === 'OK') {
             this.setState({ loading: false });
           } else {
             const error = new Error(res.error);

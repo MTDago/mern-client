@@ -9,7 +9,7 @@ export default class Secret extends Component {
     }
     componentDidMount() {
       //GET message from server using fetch api
-      fetch('http://localhost:5000/api/secret')
+      fetch('http://localhost:5000/api/secret?token=' + localStorage.getItem('token'))
         .then(res => res.text())
         .then(res => this.setState({message: res}));
     }
