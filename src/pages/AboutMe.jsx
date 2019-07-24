@@ -3,15 +3,16 @@ import Title from '../components/layout/Title';
 import '../App.sass';
 import axios from 'axios';
 import { blogAPI } from '../API/init';
+import MyDesk from '../components/layout/MyDesk';
 
 export default class AboutMe extends Component {
-    // current state of property objects which will be updated when this.state is used 
+    // current state of property objects which will be updated when this.state is used
     state = {
         blogTitle: '',
         blogContent: ''
     };
 
-    //When the AboutMe output is inserted in the DOM, React calls the componentDidMount() lifecycle method. 
+    //When the AboutMe output is inserted in the DOM, React calls the componentDidMount() lifecycle method.
     //Inside, it calls the blogAPI which calls a GET request with Axios.
     componentDidMount = () => {
         axios.get(blogAPI).then(result => {
@@ -28,7 +29,7 @@ export default class AboutMe extends Component {
         });
     };
 
-    //Render transforms the components into DOM node that the 
+    //Render transforms the components into DOM node that the
     // browser can understand and display to the screen.
     render() {
         return (
@@ -69,10 +70,12 @@ export default class AboutMe extends Component {
                     <br />
                     <br />
                     <Title title="What's on my Desk?" />
-                    <p className="title is-5">{this.state.blogTitle}</p>
+                    <MyDesk />
+
+                    {/* <p className="title is-5">{this.state.blogTitle}</p>
                     <p className="section has-text-left subtitle is-6">
                         {this.state.blogContent}
-                    </p>
+                    </p> */}
                 </article>
             </div>
         );
