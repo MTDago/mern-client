@@ -4,6 +4,7 @@ import axios from 'axios';
 import '../../App.sass';
 
 export default class SingleBook extends Component {
+    // Construct the state and props
     constructor(props) {
         super(props);
         this.state = {
@@ -15,6 +16,8 @@ export default class SingleBook extends Component {
         };
     }
 
+    //When the SingleBook output is inserted in the DOM, React calls the componentDidMount() lifecycle method. 
+    //Inside, it calls the API which calls a GET request with Axios.
     componentDidMount = () => {
         axios
             .get(
@@ -33,6 +36,9 @@ export default class SingleBook extends Component {
             });
     };
 
+    
+    //Render transforms the components into DOM node that the 
+    // browser can understand and display to the screen.
     render() {
         return (
             <div className="container is-fluid column is-mobile is-centered">

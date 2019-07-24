@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../App.sass';
 
+// Called into every page to name the title.
 export default function Title({ title }) {
     return (
         <div className="column is-two-quarter">

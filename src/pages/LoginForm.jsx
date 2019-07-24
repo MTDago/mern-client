@@ -20,6 +20,7 @@ export default class Login extends Component {
 
   // Updates based on user submitting form. Inside, it calls the API which calls a POST request with Axios and catches any errors.
   onSubmit = (event) => {
+    // Prevent page refresh
     event.preventDefault()
     fetch('http://localhost:5000/api/authenticate', {
       method: 'POST',

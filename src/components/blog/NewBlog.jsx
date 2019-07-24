@@ -15,7 +15,9 @@ export default class NewBook extends Component {
         };
     }
 
+    // Updates based on user submitting form. Inside, it calls the blogAPI which calls a POST request with Axios.
     handleSubmit = event => {
+        // Prevent page refresh
         event.preventDefault();
         const { title, content } = this.state;
         const tags = this.state.tagArray;
@@ -31,13 +33,16 @@ export default class NewBook extends Component {
             });
     };
 
+    // Updates based on user form input change.
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
         });
     };
 
+    //Tags
     handleTags = event => {
+        // Prevent page refresh
         event.preventDefault();
         let newTag = document.getElementById('tags').value;
         if (this.state.tagArray.includes(newTag) !== true) {
@@ -48,12 +53,14 @@ export default class NewBook extends Component {
         document.getElementById('tags').value = null;
     };
 
+    // if enter is pressed on the tag form
     onEnter = event => {
         if (event.which === 13 /* Enter */) {
             this.handleTags(event);
         }
     };
 
+    // deletes the tag
     deleteTag = event => {
         this.setState(state => {
             const tagArray = state.tagArray.filter((item, j) => event !== j);
@@ -63,6 +70,8 @@ export default class NewBook extends Component {
         });
     };
 
+    //Render transforms the components into DOM node that the 
+    // browser can understand and display to the screen.
     render() {
         const { title, content } = this.state;
         return (

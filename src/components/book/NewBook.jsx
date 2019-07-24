@@ -6,6 +6,7 @@ import axios from 'axios';
 import ImageUpload from './ImageUpload';
 
 export default class NewBook extends Component {
+    // Construct the state and props
     constructor(props) {
         super(props);
         this.getImage = this.getImage.bind(this);
@@ -18,7 +19,8 @@ export default class NewBook extends Component {
             image: 'no image'
         };
     }
-
+    
+    // Updates when user uploads an image
     getImage(image) {
         console.log('getImage was invoked');
         this.setState({
@@ -26,7 +28,9 @@ export default class NewBook extends Component {
         });
     }
 
+    // Updates based on user submitting form. Inside, it calls the bookAPI which calls a POST request with Axios.     
     handleSubmit = event => {
+        // prevents page refresh
         event.preventDefault();
         const { title, cost, blurb, published, series, image } = this.state;
         axios
@@ -45,12 +49,15 @@ export default class NewBook extends Component {
         console.log('SOmethign happened');
     };
 
+    // Updates based on user form input change.
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
         });
     };
 
+    //Render transforms the components into DOM node that the 
+    // browser can understand and display to the screen.
     render() {
         const { title, cost, blurb, published, series } = this.state;
         return (

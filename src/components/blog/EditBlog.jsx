@@ -14,7 +14,7 @@ export default class NewBook extends Component {
         tagArray: []
     };
 
-    // Fill the state with the Blog from the Server
+    // Fill the state with the Blog from the Server. Inside, it calls the blogAPI which calls a Get request with Axios.
     UNSAFE_componentWillMount = () => {
         axios.get(blogAPI + '/' + this.state.id).then(result => {
             let { title, content, date, tags } = result.data;
@@ -27,6 +27,7 @@ export default class NewBook extends Component {
         });
     };
 
+    // Updates based on user submitting form. Inside, it calls the blogAPI which calls a PUT request with Axios.
     handleSubmit = event => {
         // Prevent page refresh
         event.preventDefault();
@@ -72,6 +73,7 @@ export default class NewBook extends Component {
         }
     };
 
+    // deletes the tags
     deleteTag = event => {
         this.setState(state => {
             const tagArray = state.tagArray.filter((item, j) => event !== j);
@@ -90,6 +92,8 @@ export default class NewBook extends Component {
         });
     };
 
+    // Render transforms the components into DOM node that the 
+    // browser can understand and display to the screen.
     render() {
         const { title, content } = this.state;
         return (

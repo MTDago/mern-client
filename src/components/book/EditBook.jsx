@@ -5,6 +5,7 @@ import { bookAPI } from '../../API/init';
 import axios from 'axios';
 
 export default class NewBook extends Component {
+    // Create the state
     state = {
         id: this.props.match.params.id,
         title: 'THIS SHOULD BE A BOOK',
@@ -14,6 +15,7 @@ export default class NewBook extends Component {
         series: ''
     };
 
+    // Fill the state with the Blog from the Server. Inside, it calls the bookAPI which calls a Get request with Axios.
     UNSAFE_componentWillMount = () => {
         // Refactor the axios to use bookAPI + this.state.id
         axios.get(bookAPI + '/' + this.state.id).then(result => {
@@ -28,7 +30,9 @@ export default class NewBook extends Component {
         });
     };
 
+    // Updates based on user submitting form. Inside, it calls the bookAPI which calls a PUT request with Axios.
     handleSubmit = event => {
+        // Prevent page refresh
         event.preventDefault();
         const { title, cost, blurb, published, series } = this.state;
         axios
@@ -43,14 +47,17 @@ export default class NewBook extends Component {
                 window.location.replace('/about');
             });
     };
-
+    
+    // Updates based on user input change.
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
         });
     };
 
+    // Deletes the book
     deleteBook = event => {
+        // Prevent page refresh
         event.preventDefault();
         axios.delete(bookAPI + '/' + this.state.id).then(function(value) {
             console.log('THis should work');
@@ -58,6 +65,8 @@ export default class NewBook extends Component {
         });
     };
 
+    // Render transforms the components into DOM node that the 
+    // browser can understand and display to the screen.
     render() {
         const { title, cost, blurb, published, series } = this.state;
         return (

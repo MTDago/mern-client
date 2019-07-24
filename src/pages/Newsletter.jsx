@@ -24,6 +24,7 @@ export default class Newsletter extends Component {
 
     // Updates based on user submitting form. Inside, it calls the mailingListAPI which calls a POST request with Axios.
     handleSubmit = event => {
+        // Prevent page refresh
         event.preventDefault();
         const { firstName, lastName, email } = this.state;
         axios.post(mailingListAPI, {
