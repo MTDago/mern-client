@@ -77,17 +77,7 @@ export default class AboutMe extends Component {
                     </p>
                 </article>
                 <article className="column is-half">
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
+                    <div style={{ paddingTop: '50%' }} />
                     <Title title="What's on my Desk?" />
                     <MyDesk
                         reading={this.state.reading}
