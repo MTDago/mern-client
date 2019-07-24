@@ -174,7 +174,7 @@ export default class NewBook extends Component {
                         </button>
 
                         {this.state.tagArray.map((tag, index) => (
-                            <a
+                            <span
                                 key={this.state.tagArray.indexOf(tag)}
                                 className="button is-danger is-outlined"
                                 onClick={() => this.deleteTag(index)}
@@ -183,7 +183,7 @@ export default class NewBook extends Component {
                                 <span className="icon is-small">
                                     <i className="fas fa-times" />
                                 </span>
-                            </a>
+                            </span>
                         ))}
 
                         <br />

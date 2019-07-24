@@ -5,7 +5,7 @@ import { mailingListAPI } from '../API/init';
 import axios from 'axios';
 
 export default class Newsletter extends Component {
-     // current state of property objects
+    // current state of property objects
     constructor(props) {
         super(props);
         this.state = {
@@ -34,7 +34,7 @@ export default class Newsletter extends Component {
         });
     };
 
-    //Transforms the components into DOM node that the 
+    //Transforms the components into DOM node that the
     // browser can understand and display to the screen.
     render() {
         const { firstName, lastName, email } = this.state;
@@ -43,7 +43,7 @@ export default class Newsletter extends Component {
                 <Title title="Newsletter" />
                 <h2 className="subtitle is-5">
                     {' '}
-                    Want to keep Updated? Join the mailing list to stay informed
+                    Want to keep updated? Join the mailing list to stay informed
                     on new books, blog posts and events:
                 </h2>
                 <form
