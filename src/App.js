@@ -9,7 +9,7 @@ import Books from './pages/Books';
 import Blog from './pages/Blog';
 import Newsletter from './pages/Newsletter';
 import Login from './pages/LoginForm';
-import withAuth from './pages/withAuth';
+// import  from './pages/';
 
 // Auth
 // import LoginForm from './components/pages/LoginForm'
@@ -43,16 +43,16 @@ function App() {
             {/* <Route exact path ="/login" component={LoginForm} /> */}
             {/* <Route exact path="/login" component={ValidatedLoginForm} /> */}
             {/* Books */}
-            <Route exact path="/books/add" component={withAuth(NewBook)} />
+            <Route exact path="/books/add" component={(NewBook)} />
             <Route exact path="/books/:id/show" component={SingleBook} />
-            <Route exact path="/books/:id/edit" component={withAuth(EditBook)} />
+            <Route exact path="/books/:id/edit" component={(EditBook)} />
             {/* Blog */}
-            <Route exact path="/blog/add" component={withAuth(NewBlog)} />
+            <Route exact path="/blog/add" component={(NewBlog)} />
             <Route exact path="/blog/:id/show" component={SingleBlog} />
-            <Route exact path="/blog/:id/edit" component={withAuth(EditBlog)} />
+            <Route exact path="/blog/:id/edit" component={(EditBlog)} />
             {/* Login 2 */}
             <Route exact path="/login" component={Login} />
-            <Route exact path="/secret" component={withAuth(Secret)} />
+            <Route exact path="/secret" component={(Secret)} />
         </>
     );
 }
