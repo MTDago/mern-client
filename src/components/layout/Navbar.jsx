@@ -23,16 +23,16 @@ export default class Navbar extends Component {
                 </div>
                 <section className=" navbar-end ">
                     <p className="navbar-end navbar-item">
-                        <Link to="/about">About Me</Link>
+                        <Link to="/about"className="navbar-item">About Me</Link>
                     </p>
                     <p className="navbar-end navbar-item">
-                        <Link to="/books">Books</Link>
+                        <Link to="/books"className="navbar-item">Books</Link>
                     </p>
                     <p className="navbar-end navbar-item">
-                        <Link to="/blog">Blog</Link>
+                        <Link to="/blog" className="navbar-item">Blog</Link>
                     </p>
                     <p className="navbar-end navbar-item">
-                        <Link to="/newsletter">Newsletter</Link>
+                        <Link to="/newsletter"className="navbar-item">Newsletter</Link>
                     </p>
                 </section>
             </nav>
