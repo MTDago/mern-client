@@ -35,6 +35,7 @@ export default class AboutMe extends Component {
     //Inside, it calls the blogAPI which calls a GET request with Axios.
     componentDidMount = () => {
         axios.get(blogAPI).then(result => {
+            console.log(result.data);
             const allBlogs = [...result.data];
             if (allBlogs.length > 0) {
                 const blogToLoad = allBlogs[allBlogs.length - 1];
