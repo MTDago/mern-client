@@ -9,7 +9,7 @@ const stripeButton = ({ name, description, amount }) => {
 
     const onToken = token => {
         const body = {
-            amount: 999,
+            amount: amount,
             token: token.id
         };
 
@@ -21,7 +21,7 @@ const stripeButton = ({ name, description, amount }) => {
             })
             .catch(error => {
                 console.log('Payment Error: ', error);
-                alert('Payment Error you absolute donut');
+                alert(`Payment Error: ${error}`);
             });
     };
 
