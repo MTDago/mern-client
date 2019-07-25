@@ -36,7 +36,7 @@ function App() {
             {/* Pages */}
             <Route exact path="/" component={AboutMe} />
             <Route exact path="/about" component={AboutMe} />
-            <Route exact path="/desk/edit" component={EditDesk} />
+            <Route exact path="/desk/edit" component={withAuth(EditDesk)} />
             <Route exact path="/books/" component={Books} />
             <Route exact path="/blog" component={Blog} />
             <Route exact path="/newsletter" component={Newsletter} />
