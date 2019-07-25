@@ -164,17 +164,22 @@ The method we used was local version control where individuals could work from t
 ## What libraries are being used in the app and why?
 
 -   Bulma - Used for styling the application
--   Express - Used for the back-end to create the routes that the client uses to request data.
--   Mongoose, MongoDB - Used to handle creating the model schemas and for MongoDB.
--   Node - Used to install packages.
--   React - Used as the front-end of the application.
--   React-Dom - Used to render components.
--   React-Router-Dom - Used to route to components.
--   Axios - Used to communicate between frontend and server via requests.
--   Mocha, Chai - Used to test the server/backend components of the application.
+-   Express - Used for the back-end to create the routes that the client uses to request data
+-   Mongoose, MongoDB - Used to handle creating the model schemas and for MongoDB
+-   Node - Used to install packages
+-   React - Used as the front-end of the application
+-   React-Dom - Used to render components
+-   React-Router-Dom - Used to route to components
+-   Axios - Used to communicate between frontend and server via requests
+-   Mocha, Chai - Used to test the server/backend components of the application
 -   Bcrypt, Passport - Authentication and Authorization
 -   Cloudinary - Image storage and Uploading
 -   Stripe - Used to handle payments
+-   DotEnv - Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env
+-   Formik - Managing form state automatically and locally
+-   Node-Sass - Node-sass is a library that provides binding for Node.js to LibSass
+-   Node MongoDB Native - Provides a high-level API on top of mongodb-core that is meant for end users
+-   Yup - avaScript object schema validator and object parser
 
 ## A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
 
