@@ -134,8 +134,8 @@ US 14: As a client I can delete blog posts
 ![oo design diagram](https://user-images.githubusercontent.com/47685649/61674373-ee568e80-ad36-11e9-953c-1789a6aaf724.png)
 
 # Project plan & timeline:
-![Gantt Timeline](https://user-images.githubusercontent.com/47685649/61774198-b3894f00-ae39-11e9-9e1d-c7e632551d37.png)
 
+![Gantt Timeline](https://user-images.githubusercontent.com/47685649/61774198-b3894f00-ae39-11e9-9e1d-c7e632551d37.png)
 
 # Client communications:
 
@@ -186,14 +186,15 @@ The most obvious knowledge and skills needed for a MERN assessment, is a general
 
 ## Evaluate how effective your knowledge and skills were this project, using examples, and suggest changes or improvements for future projects of a similar nature?
 
-The whole team could improve on the following;
+Although the project was overall successful, there were parts where a lack of knowledge and skills became a significant challenge. Some examples of this include:
 
-    * MERN
+    * Authentication/Passport
 
-    * Testing
+    * Payment Integration
 
-This is understandable as we have only been learning javascript for a few short weeks. Having to research most things as a lot of the features in our application were not covered in class. We will all improve with time.
-The team worked well on communication and time management. We were able to work well as a team, and finish all assigned tasks before the deadline.
+    * Testing and Test Driven Development
+
+These parts of the project extended beyond their initial expected time-frames as none of the team members were proficient or experienced with the technology. This is to be expected given the time and experience the team has had with the framework and Javascript as a whole, however there are still improvements that could be made for future projects. One such method that could have been used to help with the deployment of these features is paired programming and more thorough code reviewing, as it would help each member understand the concepts better, such that when changing between tickets when helping each other there would be less catchup.
 
 ## Client Communication
 
@@ -203,10 +204,4 @@ The team worked well on communication and time management. We were able to work 
 
 # Minutes
 
-10/7
-
--   Discussed initial specs/desires for the project: - Homepage/ Splash Page - Navbar - Blurb - What’s on my desk - About Page - “What’s on my desk”/Blog - Ability to group books (Self-Help, Sci-fi, IELTS) - Link books to bookstores/kindle as well as purchasing directly - Mailing List/Contact
-
--   Showed prototyping
--   Discussed ideas for CSS/Styling of website
--   Muted/Grayscale, Sans-serif font
+For client meeting minutes see Project Proposal Document.
