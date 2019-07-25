@@ -31,7 +31,7 @@ export default class Book extends Component {
                         return (
                             <div key={object._id} className="card has-equal-height column is-half">
                                 <div className="columns is-one-quarter equal-height">
-                                    <div className="card-content is-flex is-horizontal-center">
+                                    <div className="card-content is-flex is-horizontal-center columns is-one-quarter is-centered">
                                         <a href={'/books/' + object._id + '/show'}>
                                         <img
                                             src={object.imageURL}
