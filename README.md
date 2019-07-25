@@ -179,7 +179,7 @@ The method we used was local version control where individuals could work from t
 -   Formik - Managing form state automatically and locally
 -   Node-Sass - Node-sass is a library that provides binding for Node.js to LibSass
 -   Node MongoDB Native - Provides a high-level API on top of mongodb-core that is meant for end users
--   Yup - avaScript object schema validator and object parser
+-   Yup - JavaScript object schema validator and object parser
 
 ## A team is about to engage in a project, developing a website for a small business. What knowledge and skills would they need in order to develop the project?
 
