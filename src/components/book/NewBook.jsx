@@ -17,7 +17,8 @@ export default class NewBook extends Component {
             published: '',
             series: '',
             image:
-                'http://res.cloudinary.com/yeetus/image/upload/v1563976098/placeholder-image_rsiizf.png'
+                'http://res.cloudinary.com/yeetus/image/upload/v1563976098/placeholder-image_rsiizf.png',
+            ISBN: ''
         };
     }
 
@@ -34,7 +35,15 @@ export default class NewBook extends Component {
     handleSubmit = event => {
         // prevents page refresh
         event.preventDefault();
-        const { title, cost, blurb, published, series, image } = this.state;
+        const {
+            title,
+            cost,
+            blurb,
+            published,
+            series,
+            image,
+            ISBN
+        } = this.state;
         axios
             .post(bookAPI, {
                 title: title,
@@ -42,7 +51,8 @@ export default class NewBook extends Component {
                 blurb: blurb,
                 published: published,
                 series: series,
-                imageURL: image
+                imageURL: image,
+                ISBN: ISBN
             })
             .then(function(value) {
                 window.location.replace('/books');
@@ -59,7 +69,7 @@ export default class NewBook extends Component {
     //Render transforms the components into DOM node that the
     // browser can understand and display to the screen.
     render() {
-        const { title, cost, blurb, published, series } = this.state;
+        const { title, cost, blurb, published, series, ISBN } = this.state;
         return (
             <div>
                 <Title title="Add a book to sell." />
@@ -163,6 +173,22 @@ export default class NewBook extends Component {
                             type="text"
                             name="series"
                             value={series}
+                            onChange={this.handleChange}
+                        />
+                        <br />
+                        <br />
+                        {/* ISBN */}
+                        <label
+                            className="label has-text-centered is-uppercase"
+                            htmlFor="series"
+                        >
+                            ISBN:
+                        </label>
+                        <input
+                            className="input is-rounded"
+                            type="text"
+                            name="ISBN"
+                            value={ISBN}
                             onChange={this.handleChange}
                         />
                         <br />

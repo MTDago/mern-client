@@ -17,18 +17,28 @@ export default class NewBook extends Component {
             blurb: '',
             published: '',
             series: '',
-            image: ''
+            image: '',
+            ISBN: ''
         };
 
         axios.get(bookAPI + '/' + this.state.id).then(result => {
-            let { title, blurb, cost, published, series, image } = result.data;
+            let {
+                title,
+                blurb,
+                cost,
+                published,
+                series,
+                image,
+                ISBN
+            } = result.data;
             this.setState({
                 title: title,
                 blurb: blurb,
                 cost: cost,
                 published: published,
                 series: series,
-                imageURL: image
+                imageURL: image,
+                ISBN: ISBN
             });
         });
     }
@@ -46,7 +56,15 @@ export default class NewBook extends Component {
     handleSubmit = event => {
         // Prevent page refresh
         event.preventDefault();
-        const { title, cost, blurb, published, series, image } = this.state;
+        const {
+            title,
+            cost,
+            blurb,
+            published,
+            series,
+            image,
+            ISBN
+        } = this.state;
         axios
             .put(bookAPI + '/' + this.state.id, {
                 title: title,
@@ -54,7 +72,8 @@ export default class NewBook extends Component {
                 blurb: blurb,
                 published: published,
                 series: series,
-                imageURL: image
+                imageURL: image,
+                ISBN: ISBN
             })
             .then(function(value) {
                 window.location.replace('/books');
@@ -85,7 +104,7 @@ export default class NewBook extends Component {
     // Render transforms the components into DOM node that the
     // browser can understand and display to the screen.
     render() {
-        const { title, cost, blurb, published, series } = this.state;
+        const { title, cost, blurb, published, series, ISBN } = this.state;
         return (
             <div>
                 <Title title="Edit Book:" />
@@ -200,7 +219,23 @@ export default class NewBook extends Component {
 
                         <br />
                         <br />
+                        {/* SERIES */}
+                        <label
+                            className="label has-text-centered is-uppercase"
+                            htmlFor="series"
+                        >
+                            ISBN:
+                        </label>
+                        <input
+                            className="input is-rounded"
+                            type="text"
+                            name="ISBN"
+                            value={ISBN}
+                            onChange={this.handleChange}
+                        />
 
+                        <br />
+                        <br />
                         <button className="button is-rounded" type="submit">
                             Submit
                         </button>
