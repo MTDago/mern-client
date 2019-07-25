@@ -5,7 +5,6 @@ import { mailingListAPI } from '../API/init';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
-
 export default class Newsletter extends Component {
     // current state of property objects
     constructor(props) {
@@ -29,23 +28,25 @@ export default class Newsletter extends Component {
     handleSubmit = event => {
         // Prevent page refresh
         event.preventDefault();
-        const result = window.alert("Thank you - You have now joined the mailing list.");
-        this.setState({redirect: true}, result)        
+        const result = window.alert(
+            'Thank you - You have now joined the mailing list.'
+        );
+        this.setState({ redirect: true }, result);
         const { firstName, lastName, email } = this.state;
         axios.post(mailingListAPI, {
             firstName: firstName,
             lastName: lastName,
             email: email
         });
-    }
+    };
 
     //Transforms the components into DOM node that the
     // browser can understand and display to the screen.
     render() {
         const { firstName, lastName, email, redirect } = this.state;
         if (redirect === true) {
-            return  <Redirect to="/" />;
-          }
+            return <Redirect to="/" />;
+        }
         return (
             <div>
                 <Title title="Newsletter" />
