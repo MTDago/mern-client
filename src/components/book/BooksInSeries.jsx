@@ -46,8 +46,8 @@ export default class BooksInSeries extends Component {
      //Render transforms the components into DOM node that the 
     // browser can understand and display to the screen.
     render() {
-        // Arr.map(x => x.series).uniq
-        // return series == Arr.series ? 
+        // this.state.map(book => book.series).uniq
+        // console.log( series )
         return (
             <div className="columns is-fluid column is-mobile is-centered">
                 <div className="column is-half">
