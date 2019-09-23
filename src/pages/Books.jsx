@@ -3,6 +3,7 @@ import Title from '../components/layout/Title';
 import axios from 'axios';
 import '../App.sass';
 import { bookAPI } from '../API/init';
+import { Link } from 'react-router-dom';
 
 export default class Book extends Component {
     // current state of property objects which will be updated when this.state is used. In this case , an empty books array.
@@ -35,8 +36,8 @@ export default class Book extends Component {
                             >
                                 <div className="columns is-one-quarter equal-height">
                                     <div className="card-content is-flex is-horizontal-center columns is-one-quarter is-centered">
-                                        <a
-                                            href={
+                                        <Link
+                                            to={
                                                 '/books/' + object._id + '/show'
                                             }
                                         >
@@ -49,14 +50,14 @@ export default class Book extends Component {
                                                 height="455"
                                                 width="249"
                                             />
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
-                                <a href={'/books/' + object._id + '/show'}>
+                                <Link to={'/books/' + object._id + '/show'}>
                                     <h2 className="title is-4">
                                         {object.title}
                                     </h2>
-                                </a>
+                                </Link>
                                 <p>{object.blurb}</p>
                             </div>
                         );

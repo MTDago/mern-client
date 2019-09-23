@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 // import { blogAPI } from '../API/init'
 import '../../App.sass';
+import { Link } from 'react-router-dom'
 
 export default class SingleBook extends Component {
     // Construct the state and props
@@ -46,9 +47,9 @@ export default class SingleBook extends Component {
                 {/* <a href={'/blog/' + this.state.id + '/edit'}>
                     <button className="button is-rounded">Edit</button>
                 </a> */}
-                <a href={'/blog'}>
+                <Link  to={'/blog'}>
                     <button className="button is-rounded">Back</button>
-                </a>
+                </Link>
             </div>
         );
     }

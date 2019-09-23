@@ -44,6 +44,12 @@ export default class Navbar extends Component {
                             Newsletter
                         </Link>
                     </p>
+                        <Link to="/login" className="navbar-item">
+                            Login
+                        </Link>
+                    <p>
+
+                    </p>
                 </section>
             </nav>
         );

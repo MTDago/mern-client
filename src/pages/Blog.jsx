@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Title from '../components/layout/Title';
 import axios from 'axios';
 import { blogAPI } from '../API/init';
+import { Link } from 'react-router-dom'
 
 export default class Blog extends Component {
     // current state of property objects which will be updated when this.state is used. In this case , an empty blog array.
@@ -32,11 +33,11 @@ export default class Blog extends Component {
                         return (
                             <div key={object._id} className=" is-parent box">
                                 <div className=" is-child ">
-                                    <a href={'/blog/' + object._id + '/show'}>
+                                    <Link to={'/blog/' + object._id + '/show'}>
                                         <h2 className="title is-3">
                                             {object.title}
                                         </h2>
-                                    </a>
+                                    </Link>
                                     <p className="is-pulled-right">
                                         Published on
                                         {' ' +
